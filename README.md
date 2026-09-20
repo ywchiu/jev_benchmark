@@ -2,6 +2,9 @@
 
 **English** · [繁體中文](README.zh-TW.md)
 
+What Is Jev? System One Models, Applications, Open-Source Ecosystem, and Benchmark Comparisons
+[https://www.largitdata.com/blog/jev-system-one-model-open-source-benchmark/]
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="results/charts/leaderboard-dark.svg">
   <img alt="Routing decision accuracy across systems" src="results/charts/leaderboard-light.svg" width="760">
