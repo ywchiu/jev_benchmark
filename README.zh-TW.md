@@ -10,6 +10,18 @@
   <img alt="各系統的路由決策正確率" src="results/charts/leaderboard-light.svg" width="760">
 </picture>
 
+## 為什麼有這份評測
+
+TypeSafe 推出了 Jev，一個回傳「有型別的答案」而不是文字的託管模型 —— 你給它一個情況和一串選
+項，它回你其中一個選項，外加一個機率。幾天之內就出現了做同樣事情的開源專案：有的直接從凍結
+的 Qwen 模型裡讀選項機率，有的用 Google 的擴散模型做，還有一個是專門為這件事訓練的 322M
+編碼器。
+
+對任何準備拿這個來蓋東西的人來說，接下來的問題很明顯。託管那個每次呼叫要錢，而且資料會送到
+別人那裡。開源那些跑在自己的機器上。它們真的可以互相替換嗎？如果不行，差別到底出現在哪裡？
+
+沒有人在一個有真實結構的任務上量過，所以我們量了。
+
 ## 這是什麼場景
 
 一個公司內部的助理，要從自己的資料裡回答問題：六個知識庫，涵蓋制度、產品、銷售、專案與法
@@ -62,9 +74,12 @@
 p50 是一般情況下的回應時間，p95 是慢的那一端 —— 二十次裡有十九次會比它快。
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="results/charts/panels-zh-dark.svg">
-  <img alt="四個決策逐項比較" src="results/charts/panels-zh-light.svg" width="620">
+  <source media="(prefers-color-scheme: dark)" srcset="results/charts/decisions-zh-dark.svg">
+  <img alt="四個決策中的三個逐項比較" src="results/charts/decisions-zh-light.svg" width="900">
 </picture>
+
+四個決策裡的三個，放在同一個刻度上。「要怎麼處理」沒有放進來，因為前兩名在那一項差不到半個
+百分點，分不出什麼。這張圖清楚顯示的是：Gemma 和 Jev 在前兩根一樣高，到第三根才分家。
 
 完整表格，包含這份測試自己那套更嚴格的計分，在 [`results/summary.md`](results/summary.md)。
 

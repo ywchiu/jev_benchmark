@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="452" viewBox="0 0 980 452" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif">
+<rect width="980" height="452" fill="#1a1a19"/>
+<line x1="84" y1="334.0" x2="950" y2="334.0" stroke="#33322f" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="72" y="338.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">0</text>
+<line x1="84" y1="273.2" x2="950" y2="273.2" stroke="#33322f" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="72" y="277.2" font-size="12.5" fill="#c3c2b7" text-anchor="end">20</text>
+<line x1="84" y1="212.4" x2="950" y2="212.4" stroke="#33322f" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="72" y="216.4" font-size="12.5" fill="#c3c2b7" text-anchor="end">40</text>
+<line x1="84" y1="151.6" x2="950" y2="151.6" stroke="#33322f" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="72" y="155.6" font-size="12.5" fill="#c3c2b7" text-anchor="end">60</text>
+<line x1="84" y1="90.8" x2="950" y2="90.8" stroke="#33322f" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="72" y="94.8" font-size="12.5" fill="#c3c2b7" text-anchor="end">80</text>
+<line x1="84" y1="30.0" x2="950" y2="30.0" stroke="#33322f" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="72" y="34.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">100</text>
+<rect x="84" y="30" width="866" height="304" fill="none" stroke="#6b6a64" stroke-width="1"/>
+<text transform="translate(26,182) rotate(-90)" font-size="13" fill="#ffffff" text-anchor="middle">百分比 (%)</text>
+<rect x="129.6" y="60.4" width="26" height="273.6" fill="#3987e5"/>
+<text x="142.6" y="54.4" font-size="10.5" fill="#c3c2b7" text-anchor="middle">90</text>
+<rect x="157.6" y="69.5" width="26" height="264.5" fill="#d95926"/>
+<text x="170.6" y="63.5" font-size="10.5" fill="#c3c2b7" text-anchor="middle">87</text>
+<rect x="185.6" y="45.2" width="26" height="288.8" fill="#199e70"/>
+<text x="198.6" y="39.2" font-size="10.5" fill="#c3c2b7" text-anchor="middle">95</text>
+<text x="170.6" y="358" font-size="13" fill="#ffffff" text-anchor="middle">Gemma 4 31B</text>
+<rect x="302.8" y="58.6" width="26" height="275.4" fill="#3987e5"/>
+<text x="315.8" y="52.6" font-size="10.5" fill="#c3c2b7" text-anchor="middle">91</text>
+<rect x="330.8" y="73.2" width="26" height="260.8" fill="#d95926"/>
+<text x="343.8" y="67.2" font-size="10.5" fill="#c3c2b7" text-anchor="middle">86</text>
+<rect x="358.8" y="77.4" width="26" height="256.6" fill="#199e70"/>
+<text x="371.8" y="71.4" font-size="10.5" fill="#c3c2b7" text-anchor="middle">84</text>
+<text x="343.8" y="358" font-size="13" fill="#ffffff" text-anchor="middle">Jev 1.13.0</text>
+<rect x="476.0" y="123.6" width="26" height="210.4" fill="#3987e5"/>
+<text x="489.0" y="117.6" font-size="10.5" fill="#c3c2b7" text-anchor="middle">69</text>
+<rect x="504.0" y="179.0" width="26" height="155.0" fill="#d95926"/>
+<text x="517.0" y="173.0" font-size="10.5" fill="#c3c2b7" text-anchor="middle">51</text>
+<rect x="532.0" y="59.2" width="26" height="274.8" fill="#199e70"/>
+<text x="545.0" y="53.2" font-size="10.5" fill="#c3c2b7" text-anchor="middle">90</text>
+<text x="517.0" y="358" font-size="13" fill="#ffffff" text-anchor="middle">djev-spark</text>
+<rect x="649.2" y="145.5" width="26" height="188.5" fill="#3987e5"/>
+<text x="662.2" y="139.5" font-size="10.5" fill="#c3c2b7" text-anchor="middle">62</text>
+<rect x="677.2" y="185.0" width="26" height="149.0" fill="#d95926"/>
+<text x="690.2" y="179.0" font-size="10.5" fill="#c3c2b7" text-anchor="middle">49</text>
+<rect x="705.2" y="57.4" width="26" height="276.6" fill="#199e70"/>
+<text x="718.2" y="51.4" font-size="10.5" fill="#c3c2b7" text-anchor="middle">91</text>
+<text x="690.2" y="358" font-size="13" fill="#ffffff" text-anchor="middle">SemIf</text>
+<rect x="822.4" y="279.3" width="26" height="54.7" fill="#3987e5"/>
+<text x="835.4" y="273.3" font-size="10.5" fill="#c3c2b7" text-anchor="middle">18</text>
+<rect x="850.4" y="258.0" width="26" height="76.0" fill="#d95926"/>
+<text x="863.4" y="252.0" font-size="10.5" fill="#c3c2b7" text-anchor="middle">25</text>
+<rect x="878.4" y="224.6" width="26" height="109.4" fill="#199e70"/>
+<text x="891.4" y="218.6" font-size="10.5" fill="#c3c2b7" text-anchor="middle">36</text>
+<text x="863.4" y="358" font-size="13" fill="#ffffff" text-anchor="middle">Laya 322M</text>
+<rect x="348.0" y="380" width="338.0" height="34" rx="3" fill="none" stroke="#6b6a64" stroke-width="1"/>
+<rect x="362.0" y="390" width="13" height="13" fill="#3987e5"/>
+<text x="382.0" y="401" font-size="12.5" fill="#ffffff">去哪裡找</text>
+<rect x="460.8" y="390" width="13" height="13" fill="#d95926"/>
+<text x="480.8" y="401" font-size="12.5" fill="#ffffff">話題是否換了</text>
+<rect x="586.0" y="390" width="13" height="13" fill="#199e70"/>
+<text x="606.0" y="401" font-size="12.5" fill="#ffffff">之後的限制</text>
+</svg>

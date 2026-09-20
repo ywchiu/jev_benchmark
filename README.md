@@ -10,6 +10,22 @@ assistant — across a whole conversation, not just one question?
   <img alt="Routing decision accuracy by system" src="results/charts/leaderboard-light.svg" width="760">
 </picture>
 
+## Why this exists
+
+TypeSafe released Jev, a hosted model that answers a typed question with a typed answer
+instead of prose — you hand it a situation and a list of options, and it hands back one
+of the options with a probability on it. Within days there were open-source projects
+doing the same thing: one reading option probabilities straight out of a frozen Qwen
+model, one doing it with a diffusion model from Google, one shipping a 322M encoder
+trained for the job.
+
+That raises an obvious question for anyone about to build on this. The hosted one costs
+money per call and sends your data somewhere else. The open ones run on your own
+hardware. Are they actually interchangeable, and if not, where exactly does the
+difference show up?
+
+Nobody had measured that on a task with real structure, so we did.
+
 ## The setting
 
 A company assistant answers questions out of its own material: six knowledge bases
@@ -74,9 +90,14 @@ p50 is the typical response time and p95 is the slow tail — nineteen out of tw
 responses come back faster than that.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="results/charts/panels-dark.svg">
-  <img alt="The four decisions compared across systems" src="results/charts/panels-light.svg" width="620">
+  <source media="(prefers-color-scheme: dark)" srcset="results/charts/decisions-dark.svg">
+  <img alt="Three of the four decisions compared across systems" src="results/charts/decisions-light.svg" width="900">
 </picture>
+
+Three of the four decisions, on one scale. "How to handle it" is left out because the
+top two systems sit within half a point of each other there and it separates nothing.
+What the chart makes plain is that Gemma and Jev are level on the first two bars and
+part company on the third.
 
 Full tables, including the benchmark's own stricter score, are in
 [`results/summary.md`](results/summary.md).
