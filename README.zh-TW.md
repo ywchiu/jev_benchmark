@@ -2,6 +2,9 @@
 
 [English](README.md) · **繁體中文**
 
+Jev 是什麼？System One 模型、應用、開源生態與實測比較
+https://www.largitdata.com/blog/jev-system-one-model-open-source-benchmark/
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="results/charts/leaderboard-dark.svg">
   <img alt="各系統的路由決策正確率" src="results/charts/leaderboard-light.svg" width="760">
