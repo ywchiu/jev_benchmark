@@ -1,171 +1,199 @@
-# Jev Benchmark
+# Jev Benchmark Results
 
 **English** · [繁體中文](README.zh-TW.md)
 
-How well can five decision models run the routing step of a retrieval-augmented
-assistant — across a whole conversation, not just one question?
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="results/charts/leaderboard-dark.svg">
-  <img alt="Routing decision accuracy by system" src="results/charts/leaderboard-light.svg" width="760">
+  <img alt="Routing decision accuracy across systems" src="results/charts/leaderboard-light.svg" width="760">
 </picture>
 
-## Why this exists
+TypeSafe introduced Jev, a hosted model that works differently from a typical text-generation model. You give it a situation and a set of choices, and instead of generating a long response, it selects one of those choices and returns a probability.
 
-TypeSafe released Jev, a hosted model that answers a typed question with a typed answer
-instead of prose — you hand it a situation and a list of options, and it hands back one
-of the options with a probability on it. Within days there were open-source projects
-doing the same thing: one reading option probabilities straight out of a frozen Qwen
-model, one doing it with a diffusion model from Google, one shipping a 322M encoder
-trained for the job.
+Soon after Jev was released, the community started building several open-source alternatives with a similar goal. We wanted to see how these systems compare with Jev in a realistic Agent routing scenario.
 
-That raises an obvious question for anyone about to build on this. The hosted one costs
-money per call and sends your data somewhere else. The open ones run on your own
-hardware. Are they actually interchangeable, and if not, where exactly does the
-difference show up?
+## Benchmark Scenario
 
-Nobody had measured that on a task with real structure, so we did.
+We simulated an enterprise RAG Agent.
 
-## The setting
+The Agent can access six knowledge bases covering company policies, products, sales, projects, and legal information. It can also open eight specific documents, such as a signed contract or an 80-page manual. In addition, it has six tools that can query ERP, CRM, and calendar data, or create a support ticket.
 
-A company assistant answers questions out of its own material: six knowledge bases
-covering policy, products, sales, projects and legal; eight specific documents such as a
-signed contract and an 80-page manual; and six tools that read the ERP, the CRM, the
-calendar, or open a support ticket.
+This benchmark does not evaluate the quality of the final answer.
 
-This is retrieval-augmented generation, and the part being tested is the step *before*
-the answer. Someone asks a question; something has to decide where the answer comes
-from. Does it need a document opened, a knowledge base searched, a web lookup, a
-database query — or is the answer already sitting in the conversation? Get that step
-wrong and everything downstream is wrong too: the assistant answers from the wrong
-source, or fetches nothing and makes something up.
+Instead, it evaluates the decision that happens immediately before the answer:
 
-In a single-question demo this is easy. Across a real conversation it is not, because
-the ground keeps moving. The user says "actually, just use this document" and that
-restriction has to hold for the next several turns. Two turns later they change the
-subject entirely, and the old restriction should go. Then they say "also check the
-current discount policy" — is that a new topic, or the same one with one more source?
+**Where should the Agent get the answer from?**
 
-The benchmark is a hundred of those moments: twenty conversations, five turns each.
-Every turn arrives with the history that preceded it, so all five systems face exactly
-the same situation. Nothing is actually retrieved and no tool really runs — what is
-being graded is the decision, not the answer.
+When a user asks a question, the system may need to open a specific document, search a knowledge base, browse the public web, query a database, or call a tool. Sometimes it should not retrieve anything at all because the answer is already available in the conversation.
 
-## What each number means
+If this decision is wrong, everything downstream is likely to go wrong as well. The Agent may retrieve information from the wrong source, or answer without retrieving anything when retrieval was actually required.
 
-Every turn, a system has to get four things right at once.
+For a single isolated question, this is relatively straightforward.
 
-**Where to look** (`route`) — one of nine answers: use what is already in the
-conversation, answer from general knowledge, open a named document, search a knowledge
-base, look it up on the public web, call a tool, combine two of those, ask the user for
-something missing, or refuse because it is not allowed.
+The real difficulty appears in multi-turn conversations.
 
-**Did the subject change** (`scope change`) — this is the one that makes multi-turn hard.
-Six answers: nothing moved, the user switched topics, the same task now needs one more
-source, the user narrowed things down, the sources in play conflict so the assistant
-should ask before acting, or the request is blocked. Getting this wrong is how an
-assistant ends up searching the whole knowledge base when the user said "only this file".
+For example, a user may first ask about a company policy, then say, “Never mind, just use this document.” Two turns later, they may switch to a completely different topic. Or they may stay on the same topic and add, “Also check the current discount.”
 
-**How to handle it** (`mode`) — answer the question, rewrite or summarise something,
-analyse and compare, ask for clarification, or block.
+The system then has to decide:
 
-**What restriction holds afterwards** (`restriction`) — whether the next turn may pick
-sources freely, is confined to specific documents, or may not touch the public web. This
-one persists: it carries from turn to turn until the user lifts it, so an error here
-quietly corrupts every turn that follows.
+Is this a new topic, or is the user simply adding another source to the same task?
 
-**Decision correct** in the tables below means all four were right on the same turn.
+This is exactly the kind of decision that routing models are designed to handle.
+
+The benchmark contains 100 test cases across 20 conversations, with 5 turns in each conversation. Every turn includes the full conversation history up to that point.
+
+The benchmark does not actually retrieve documents or execute tools. We only evaluate whether the system makes the correct decision. The quality of the downstream answer is not part of this benchmark.
+
+For every turn, the system must correctly make four decisions at the same time.
+
+### Where should the answer come from? (`route`)
+
+The system must choose one of nine routing options:
+
+Use information already available in the conversation, answer from general knowledge, open a specific document, search a knowledge base, search the public web, call a tool, use two source types together, ask the user for missing information, or reject the request because it is not allowed.
+
+### Has the scope changed? (`scope change`)
+
+This is where multi-turn conversations become difficult.
+
+The system must choose one of six possibilities:
+
+Nothing has changed, the user switched topics, the same task now requires an additional source, the user narrowed the scope, the available sources conflict and the system should ask before proceeding, or the request should be blocked.
+
+For example, if the user explicitly says “Only use this file,” but the Agent still searches the entire knowledge base, that is a scope-change error.
+
+### How should the request be handled? (`mode`)
+
+The system must also decide whether it should:
+
+Answer directly, rewrite or summarize, analyze or compare, ask a follow-up question, or block the request.
+
+### What restrictions should apply next? (`restriction`)
+
+Finally, the system must determine which source restrictions should remain active in the following turn.
+
+For example, the Agent may be allowed to freely choose sources, restricted to only the documents explicitly selected by the user, or prohibited from using the public web.
+
+This state persists across turns until the user explicitly removes the restriction.
+
+That means a mistake here does not only affect the current turn. It can silently affect several later turns as well.
+
+In the table below, **Decision Accuracy** means that all four decisions must be correct within the same turn.
 
 ## Results
 
-| System | Decision correct | Where to look | Subject change | How to handle | Restriction | p50 | p95 |
-|---|---|---|---|---|---|---|---|
-| **Gemma 4 31B** (self-hosted) | **77.0%** | 90.0% | 87.0% | 92.0% | **95.0%** | 2,293 ms | 4,723 ms |
-| **Jev 1.13.0** (hosted API) | 61.4% | **90.6%** | 85.8% | 91.6% | 84.4% | **749 ms** | **818 ms** |
-| djev-spark (self-hosted) | 32.2% | 69.2% | 51.0% | 80.2% | 90.4% | 1,230 ms | 1,470 ms |
-| SemIf (self-hosted) | 24.0% | 62.0% | 49.0% | 65.0% | 91.0% | 627 ms | 1,206 ms |
-| Laya 322M (self-hosted) | 0.0% | 18.0% | 25.0% | 10.0% | 36.0% | **189 ms** | 312 ms |
+| System                        | Decision Accuracy | Route     | Scope Change | Mode  | Restriction | p50        | p95        |
+| ----------------------------- | ----------------- | --------- | ------------ | ----- | ----------- | ---------- | ---------- |
+| **Gemma 4 31B** (self-hosted) | **77.0%**         | 90.0%     | 87.0%        | 92.0% | **95.0%**   | 2,293 ms   | 4,723 ms   |
+| **Jev 1.13.0** (hosted API)   | 61.4%             | **90.6%** | 85.8%        | 91.6% | 84.4%       | **749 ms** | **818 ms** |
+| djev-spark (self-hosted)      | 32.2%             | 69.2%     | 51.0%        | 80.2% | 90.4%       | 1,230 ms   | 1,470 ms   |
+| SemIf (self-hosted)           | 24.0%             | 62.0%     | 49.0%        | 65.0% | 91.0%       | 627 ms     | 1,206 ms   |
+| Laya 322M (self-hosted)       | 0.0%              | 18.0%     | 25.0%        | 10.0% | 36.0%       | **189 ms** | 312 ms     |
 
-p50 is the typical response time and p95 is the slow tail — nineteen out of twenty
-responses come back faster than that.
+p50 represents a typical response latency.
+
+p95 represents the slower end of the latency distribution. In simple terms, roughly 19 out of 20 requests complete faster than this value.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="results/charts/decisions-dark.svg">
-  <img alt="Three of the four decisions compared across systems" src="results/charts/decisions-light.svg" width="900">
+  <source media="(prefers-color-scheme: dark)" srcset="results/charts/decisions-zh-dark.svg">
+  <img alt="Comparison of three out of the four routing decisions" src="results/charts/decisions-zh-light.svg" width="900">
 </picture>
 
-Three of the four decisions, on one scale. "How to handle it" is left out because the
-top two systems sit within half a point of each other there and it separates nothing.
-What the chart makes plain is that Gemma and Jev are level on the first two bars and
-part company on the third.
+The chart above compares three of the four decision dimensions using the same scale.
 
-Full tables, including the benchmark's own stricter score, are in
-[`results/summary.md`](results/summary.md).
+`mode` is not included because Gemma and Jev differ by less than half a percentage point on that dimension, so there is very little meaningful separation.
 
-## What the numbers say
+The more interesting pattern appears elsewhere.
 
-**Gemma and Jev are level on the decision and split on updating the state.** Their
-choice of where to look is within half a point of each other, and their subject-change
-calls within about one point. Almost the entire gap is the restriction state: 95%
-against 84%.
+Gemma and Jev are very close on `route` and `scope change`. Most of the overall gap comes from the third dimension shown here: restriction-state updates.
 
-This is not a memory problem, and it is worth being precise about why. Every system gets
-the whole conversation — by the fifth turn that is eleven entries covering every earlier
-question, every tool result and every reply — and the restriction in force is also stated
-outright in the input. Nobody has to remember it. The job is to look at a restriction you
-have been handed and decide what it becomes after this turn, and Jev is less accurate at
-that. Because the field then carries forward, an error there propagates through the rest
-of the conversation, which is why Gemma gets roughly twice as many whole conversations
-right. Since the state is given rather than recalled, feeding the model more context is
-not a fix.
+The full results, including the stricter scoring method used by this benchmark, are available in [`results/summary.md`](results/summary.md).
 
-**Jev is the predictable one.** Its slow tail is barely slower than its typical response,
-818 ms against 749 ms. Gemma's slow tail is more than double its typical and runs past
-four seconds. If you are promising a response time rather than reporting an average, that
-matters more than the accuracy gap does.
+## What Do These Numbers Tell Us?
 
-**Nobody knows when to stop and ask.** When a request genuinely lacks something the
-assistant needs, the right move is to ask for it. Gemma does that 43% of the time and Jev
-31%, and both fail the same way: instead of asking, they call a tool. If the tool has
-side effects — filing a ticket, sending a message — the routing model cannot be the only
-thing standing in front of it.
+### Gemma and Jev are very close on routing. The real difference is state updates.
 
-**Two of the five should not be deployed for this.** Laya is the fastest by a wide margin
-and gets nothing right; its own documentation says the base model is near chance on this
-kind of task without fine-tuning. SemIf never once recognised a request that should be
-refused on permission grounds — fifteen opportunities, zero catches.
+If we look only at the core routing decisions, Gemma and Jev are nearly tied.
 
-## What had to be fixed before the numbers meant anything
+Their `route` accuracy differs by less than half a percentage point, and their `scope change` accuracy differs by only about one percentage point.
 
-Five measurement faults produced badly wrong conclusions along the way, and most were
-invisible in the scores themselves. The worst left one system scoring 3.8% when its real
-result was 32.2%: our adapter was sending Chinese text in an escaped form that made the
-input five times longer, and the number of questions happened to cross a threshold that
-put the server into a broken answer format. Another silently turned whole runs into
-zeroes, because an SSH tunnel dropped and a connection failure scores exactly like a
-wrong answer.
+The overall gap between 77.0% and 61.4% comes mainly from `restriction`.
 
-The full account is in [`docs/method.md`](docs/method.md). The short version: when a
-system scores badly, confirm it is actually reading the input before believing the
-number.
+Gemma reaches 95.0% accuracy on this dimension, while Jev reaches 84.4%.
 
-## What is in here
+It is important to clarify that this is not a memory problem.
 
-| Path | Contents |
-|---|---|
-| [`questions/`](questions/) | The eleven questions each system is asked, and why they are split that way |
-| [`results/summary.md`](results/summary.md) | Full result tables |
-| [`results/per_system/`](results/per_system/) | Every prediction, timing record and score, per system per repeat |
-| [`results/charts/`](results/charts/) | The charts above |
-| [`docs/method.md`](docs/method.md) | How the runs were done and what can go wrong |
-| [`docs/gold-audit.md`](docs/gold-audit.md) | Audit of the answer key, done before any system was run |
-| [`code/`](code/) | Adapters and scoring scripts |
+Every system receives the complete conversation history.
 
-## Limits worth knowing
+By the fifth turn, the input contains all previous user questions, tool results, and assistant responses, for a total of eleven messages. The currently active restriction is also explicitly included in the input.
 
-This is a scripted replay, not a live agent. Nothing branches when a system takes a wrong
-turn, so a high score here does not mean a system completes real tasks. The answer key is
-synthetic and has not been independently reviewed; our audit found one genuinely arguable
-label and one rule the answer key follows but never states. Each conversation is only
-five turns, far short of where memory usually starts to fail. Self-hosted timings share a
-GPU with other work and are therefore conservative.
+The model does not need to remember the previous state on its own.
+
+Its actual task is:
+
+**Given the current restriction, determine what the restriction should become after this turn.**
+
+Jev is less accurate at that transition.
+
+And because `restriction` state carries forward into the next turn, one incorrect update can affect the rest of the conversation.
+
+This also helps explain why Gemma completes roughly twice as many full conversations without making any decision errors.
+
+Since the current state is already explicitly provided to the model, simply adding more context does not solve this problem.
+
+### Jev has much more predictable latency
+
+One of Jev's strongest advantages is latency consistency.
+
+Its p50 latency is 749 ms, while its p95 is 818 ms.
+
+That means the difference between a typical request and a relatively slow request is only about 70 ms.
+
+Gemma has a p50 of around 2.3 seconds, while its p95 exceeds 4.7 seconds.
+
+So if a production system cares not only about average latency, but also about keeping decision time predictable across requests, Jev's latency profile is very attractive.
+
+### None of the systems are particularly good at knowing when to stop and ask
+
+Another clear weakness is deciding when the Agent should ask the user for more information instead of proceeding.
+
+Some requests are missing information that the Agent genuinely needs. In those cases, the correct action is not to search or call a tool. It is to ask a follow-up question first.
+
+Gemma gets only 43% of these cases right. Jev gets 31%.
+
+More importantly, both systems tend to fail in the same way:
+
+**They skip the question and call a tool directly.**
+
+If that tool only reads data, the risk may be limited.
+
+But if the tool has side effects, such as creating a ticket, sending a message, or modifying data, the routing model should not be the only safety gate in front of execution.
+
+An additional validation or permission layer is still necessary before side-effecting tools are allowed to run.
+
+### Some models are not ready for this type of routing task
+
+Laya is extremely fast, with a p50 latency of only 189 ms.
+
+However, its full decision accuracy in this benchmark is 0%.
+
+Its own documentation also notes that the base model performs close to random guessing on this type of task without task-specific fine-tuning.
+
+SemIf has a different weakness.
+
+It performs particularly poorly on permission and rejection decisions.
+
+There are fifteen benchmark cases where the correct behavior is to reject the request because of permissions or policy constraints. SemIf fails to identify all fifteen of them.
+
+So while both systems are fast, neither is currently suitable as the primary routing layer for an enterprise Agent without additional work.
+
+## Reference Files
+
+| Path                                         | Description                                                                             |
+| -------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [`questions/`](questions/)                   | The eleven questions used for each system and why the benchmark was structured this way |
+| [`results/summary.md`](results/summary.md)   | Full benchmark results                                                                  |
+| [`results/per_system/`](results/per_system/) | Per-turn predictions, latency, and scores for each system                               |
+| [`results/charts/`](results/charts/)         | Charts used above                                                                       |
+| [`docs/method.md`](docs/method.md)           | Benchmark methodology and known failure modes                                           |
+| [`docs/gold-audit.md`](docs/gold-audit.md)   | Audit of the golden answers, completed before running any system                        |
+| [`code/`](code/)                             | Adapter and scoring code                                                                |
