@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="350" viewBox="0 0 760 350" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif">
+<rect width="760" height="350" fill="#1a1a19"/>
+<text x="28" y="34" font-size="15.5" font-weight="600" fill="#ffffff">Routing decision accuracy</text>
+<text x="28" y="54" font-size="12" fill="#c3c2b7">All four decision fields correct &#183; 100 turns &#215; 5 repeats</text>
+<line x1="132.0" y1="64" x2="132.0" y2="288" stroke="#33322f" stroke-width="1"/>
+<text x="132.0" y="306" font-size="10.5" fill="#84837c" text-anchor="middle">0%</text>
+<line x1="245.2" y1="64" x2="245.2" y2="288" stroke="#33322f" stroke-width="1"/>
+<text x="245.2" y="306" font-size="10.5" fill="#84837c" text-anchor="middle">20%</text>
+<line x1="358.4" y1="64" x2="358.4" y2="288" stroke="#33322f" stroke-width="1"/>
+<text x="358.4" y="306" font-size="10.5" fill="#84837c" text-anchor="middle">40%</text>
+<line x1="471.6" y1="64" x2="471.6" y2="288" stroke="#33322f" stroke-width="1"/>
+<text x="471.6" y="306" font-size="10.5" fill="#84837c" text-anchor="middle">60%</text>
+<line x1="584.8" y1="64" x2="584.8" y2="288" stroke="#33322f" stroke-width="1"/>
+<text x="584.8" y="306" font-size="10.5" fill="#84837c" text-anchor="middle">80%</text>
+<line x1="698.0" y1="64" x2="698.0" y2="288" stroke="#33322f" stroke-width="1"/>
+<text x="698.0" y="306" font-size="10.5" fill="#84837c" text-anchor="middle">100%</text>
+<text x="120" y="87.7" font-size="12.5" fill="#ffffff" text-anchor="end">Gemma 4 31B</text>
+<rect x="132" y="74" width="435.8" height="19" rx="4" fill="#3987e5"/>
+<rect x="132" y="74" width="4.0" height="19" fill="#3987e5"/>
+<text x="575.8" y="87.7" font-size="12" font-weight="600" fill="#ffffff">77.0%</text>
+<text x="120" y="101.7" font-size="10" fill="#84837c" text-anchor="end">route 90% &#183; scope 87% &#183; p95 4723ms</text>
+<text x="120" y="133.7" font-size="12.5" fill="#ffffff" text-anchor="end">Jev 1.13.0</text>
+<rect x="132" y="120" width="347.5" height="19" rx="4" fill="#3987e5"/>
+<rect x="132" y="120" width="4.0" height="19" fill="#3987e5"/>
+<text x="487.5" y="133.7" font-size="12" font-weight="600" fill="#ffffff">61.4%</text>
+<text x="120" y="147.7" font-size="10" fill="#84837c" text-anchor="end">route 91% &#183; scope 86% &#183; p95 818ms</text>
+<text x="120" y="179.7" font-size="12.5" fill="#ffffff" text-anchor="end">djev-spark</text>
+<rect x="132" y="166" width="182.3" height="19" rx="4" fill="#3987e5"/>
+<rect x="132" y="166" width="4.0" height="19" fill="#3987e5"/>
+<text x="322.3" y="179.7" font-size="12" font-weight="600" fill="#ffffff">32.2%</text>
+<text x="120" y="193.7" font-size="10" fill="#84837c" text-anchor="end">route 69% &#183; scope 51% &#183; p95 1470ms</text>
+<text x="120" y="225.7" font-size="12.5" fill="#ffffff" text-anchor="end">SemIf</text>
+<rect x="132" y="212" width="135.8" height="19" rx="4" fill="#3987e5"/>
+<rect x="132" y="212" width="4.0" height="19" fill="#3987e5"/>
+<text x="275.8" y="225.7" font-size="12" font-weight="600" fill="#ffffff">24.0%</text>
+<text x="120" y="239.7" font-size="10" fill="#84837c" text-anchor="end">route 62% &#183; scope 49% &#183; p95 1206ms</text>
+<text x="120" y="271.7" font-size="12.5" fill="#ffffff" text-anchor="end">Laya 322M</text>
+<text x="140.0" y="271.7" font-size="12" font-weight="600" fill="#ffffff">0.0%</text>
+<text x="120" y="285.7" font-size="10" fill="#84837c" text-anchor="end">route 18% &#183; scope 25% &#183; p95 312ms</text>
+</svg>

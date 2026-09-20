@@ -1,0 +1,684 @@
+{
+  "n": 20,
+  "missing": 0,
+  "schema_accuracy": 1.0,
+  "semantic_accuracy": 0.55,
+  "route_accuracy": 0.65,
+  "mode_accuracy": 0.75,
+  "targets_accuracy": 0.8,
+  "scope_action_accuracy": 0.55,
+  "scope_state_accuracy": 0.4,
+  "joint_accuracy": 0.2,
+  "route_macro_f1": 0.5547619047619048,
+  "per_route": {
+    "KNOWLEDGE": {
+      "n": 4,
+      "f1": 0.8571428571428571
+    },
+    "TOOL": {
+      "n": 1,
+      "f1": 0.4
+    },
+    "HYBRID": {
+      "n": 1,
+      "f1": 0.0
+    },
+    "CONTEXT": {
+      "n": 6,
+      "f1": 0.7142857142857143
+    },
+    "GENERAL": {
+      "n": 2,
+      "f1": 0.0
+    },
+    "DOCUMENT": {
+      "n": 3,
+      "f1": 0.8
+    },
+    "BLOCK": {
+      "n": 1,
+      "f1": 1.0
+    },
+    "CLARIFY": {
+      "n": 2,
+      "f1": 0.6666666666666666
+    }
+  },
+  "confusion_matrix": {
+    "KNOWLEDGE": {
+      "KNOWLEDGE": 3,
+      "TOOL": 1
+    },
+    "TOOL": {
+      "TOOL": 1
+    },
+    "HYBRID": {
+      "TOOL": 1
+    },
+    "CONTEXT": {
+      "TOOL": 1,
+      "CONTEXT": 5
+    },
+    "GENERAL": {
+      "CONTEXT": 2
+    },
+    "DOCUMENT": {
+      "CONTEXT": 1,
+      "DOCUMENT": 2
+    },
+    "BLOCK": {
+      "BLOCK": 1
+    },
+    "CLARIFY": {
+      "CLARIFY": 1,
+      "WEB": 1
+    }
+  },
+  "session_all_correct_rate": 0.0,
+  "mean_correct_prefix": 0.5,
+  "sessions": {
+    "S04": {
+      "all_correct": false,
+      "correct_prefix": 1,
+      "evaluated_turns": 5,
+      "first_error": 2
+    },
+    "S07": {
+      "all_correct": false,
+      "correct_prefix": 1,
+      "evaluated_turns": 5,
+      "first_error": 2
+    },
+    "S10": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    },
+    "S15": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    }
+  },
+  "errors": [
+    {
+      "id": "S04-T2",
+      "failed_fields": [
+        "scope_action",
+        "joint"
+      ],
+      "gold": {
+        "route": "TOOL",
+        "targets": [
+          "calculator"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "EXPAND",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_sales",
+            "calculator"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S04-T2",
+        "route": "TOOL",
+        "mode": "ANSWER",
+        "targets": [
+          "calculator"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "calculator",
+            "kb_sales"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S04-T3",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "targets",
+        "scope_action",
+        "joint"
+      ],
+      "gold": {
+        "route": "HYBRID",
+        "targets": [
+          "kb_sales",
+          "calculator"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_sales",
+            "calculator"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S04-T3",
+        "route": "TOOL",
+        "mode": "ANSWER",
+        "targets": [],
+        "scope_action": "EXPAND",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "calculator",
+            "kb_sales"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S04-T4",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "TRANSFORM",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_sales",
+            "calculator"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S04-T4",
+        "route": "TOOL",
+        "mode": "ANSWER",
+        "targets": [],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_sales"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S04-T5",
+      "failed_fields": [
+        "mode",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "TRANSFORM",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_sales",
+            "calculator"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S04-T5",
+        "route": "CONTEXT",
+        "mode": "ANSWER",
+        "targets": [],
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_sales"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S07-T2",
+      "failed_fields": [
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "KNOWLEDGE",
+        "targets": [
+          "kb_archive"
+        ],
+        "mode": "ANALYZE",
+        "scope_action": "EXPAND",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_policy",
+            "kb_archive"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S07-T2",
+        "route": "KNOWLEDGE",
+        "mode": "ANALYZE",
+        "targets": [
+          "kb_archive"
+        ],
+        "scope_action": "EXPAND",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_policy"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S07-T3",
+      "failed_fields": [
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "ANSWER",
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_policy"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S07-T3",
+        "route": "CONTEXT",
+        "mode": "ANSWER",
+        "targets": [],
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_archive",
+            "kb_policy"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S07-T4",
+      "failed_fields": [
+        "scope_action",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "ANALYZE",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_policy"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S07-T4",
+        "route": "CONTEXT",
+        "mode": "ANALYZE",
+        "targets": [],
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_policy"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S07-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "GENERAL",
+        "targets": [],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": []
+        }
+      },
+      "prediction": {
+        "id": "S07-T5",
+        "route": "CONTEXT",
+        "mode": "ANSWER",
+        "targets": [],
+        "scope_action": "ASK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_policy"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S10-T1",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "KNOWLEDGE",
+        "targets": [
+          "kb_product"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_product"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S10-T1",
+        "route": "TOOL",
+        "mode": "ANSWER",
+        "targets": [],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_sso",
+            "kb_product"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S10-T2",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_sso"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_sso"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S10-T2",
+        "route": "CONTEXT",
+        "mode": "CLARIFY",
+        "targets": [],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_sso",
+            "kb_product"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S10-T3",
+      "failed_fields": [
+        "mode",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "TRANSFORM",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_sso"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S10-T3",
+        "route": "CONTEXT",
+        "mode": "ANSWER",
+        "targets": [],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_sso",
+            "kb_product"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S10-T5",
+      "failed_fields": [
+        "route",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "GENERAL",
+        "targets": [],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": []
+        }
+      },
+      "prediction": {
+        "id": "S10-T5",
+        "route": "CONTEXT",
+        "mode": "ANSWER",
+        "targets": [],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_sso"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S15-T1",
+      "failed_fields": [
+        "semantic",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_report"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_report"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S15-T1",
+        "route": "DOCUMENT",
+        "mode": "ANSWER",
+        "targets": [
+          "doc_report"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_report",
+            "kb_project"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S15-T3",
+      "failed_fields": [
+        "semantic",
+        "mode",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_minutes"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_minutes"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S15-T3",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_minutes"
+        ],
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_minutes",
+            "kb_project"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S15-T4",
+      "failed_fields": [
+        "semantic",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "TRANSFORM",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_minutes"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S15-T4",
+        "route": "CONTEXT",
+        "mode": "TRANSFORM",
+        "targets": [],
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_minutes",
+            "kb_project"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S15-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "targets",
+        "joint"
+      ],
+      "gold": {
+        "route": "CLARIFY",
+        "targets": [],
+        "mode": "CLARIFY",
+        "scope_action": "ASK",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_minutes"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S15-T5",
+        "route": "WEB",
+        "mode": "CLARIFY",
+        "targets": [
+          "web_search"
+        ],
+        "scope_action": "ASK",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_minutes"
+          ]
+        }
+      }
+    }
+  ]
+}

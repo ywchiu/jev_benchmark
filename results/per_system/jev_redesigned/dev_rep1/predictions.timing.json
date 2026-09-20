@@ -1,0 +1,107 @@
+{
+  "track": "teacher_forced",
+  "split": "dev",
+  "adapter": "adapters_ext:jev_redesigned",
+  "records": [
+    {
+      "id": "S04-T1",
+      "latency_ms": 774.2991669801995,
+      "error": null
+    },
+    {
+      "id": "S04-T2",
+      "latency_ms": 801.4594170381315,
+      "error": null
+    },
+    {
+      "id": "S04-T3",
+      "latency_ms": 711.52837498812,
+      "error": null
+    },
+    {
+      "id": "S04-T4",
+      "latency_ms": 815.8189579844475,
+      "error": null
+    },
+    {
+      "id": "S04-T5",
+      "latency_ms": 772.0588329830207,
+      "error": null
+    },
+    {
+      "id": "S07-T1",
+      "latency_ms": 701.2670830008574,
+      "error": null
+    },
+    {
+      "id": "S07-T2",
+      "latency_ms": 711.4988749963231,
+      "error": null
+    },
+    {
+      "id": "S07-T3",
+      "latency_ms": 764.780665980652,
+      "error": null
+    },
+    {
+      "id": "S07-T4",
+      "latency_ms": 808.0962499952875,
+      "error": null
+    },
+    {
+      "id": "S07-T5",
+      "latency_ms": 684.7754580085166,
+      "error": null
+    },
+    {
+      "id": "S10-T1",
+      "latency_ms": 767.8427090286277,
+      "error": null
+    },
+    {
+      "id": "S10-T2",
+      "latency_ms": 755.6845829822123,
+      "error": null
+    },
+    {
+      "id": "S10-T3",
+      "latency_ms": 702.1119999699295,
+      "error": null
+    },
+    {
+      "id": "S10-T4",
+      "latency_ms": 745.234125002753,
+      "error": null
+    },
+    {
+      "id": "S10-T5",
+      "latency_ms": 730.8301249868236,
+      "error": null
+    },
+    {
+      "id": "S15-T1",
+      "latency_ms": 753.4719159593806,
+      "error": null
+    },
+    {
+      "id": "S15-T2",
+      "latency_ms": 739.7823329665698,
+      "error": null
+    },
+    {
+      "id": "S15-T3",
+      "latency_ms": 736.8841659626924,
+      "error": null
+    },
+    {
+      "id": "S15-T4",
+      "latency_ms": 743.5373750049621,
+      "error": null
+    },
+    {
+      "id": "S15-T5",
+      "latency_ms": 751.3789579970762,
+      "error": null
+    }
+  ]
+}

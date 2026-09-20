@@ -1,0 +1,120 @@
+{
+  "system": "Laya 322M (8192+case_first)",
+  "repeats": 5,
+  "turns_per_repeat": 100,
+  "dev_turns": 20,
+  "test_turns": 80,
+  "all100_route_accuracy": 0.18,
+  "dev20_route_accuracy": 0.2,
+  "test80_route_accuracy": 0.175,
+  "all100_mode_accuracy": 0.1,
+  "dev20_mode_accuracy": 0.15,
+  "test80_mode_accuracy": 0.0875,
+  "all100_scope_action_accuracy": 0.25,
+  "dev20_scope_action_accuracy": 0.2,
+  "test80_scope_action_accuracy": 0.2625,
+  "all100_boundary_accuracy": 0.36,
+  "dev20_boundary_accuracy": 0.45,
+  "test80_boundary_accuracy": 0.3375,
+  "all100_route_macro_f1": 0.058,
+  "dev20_route_macro_f1": 0.0781,
+  "test80_route_macro_f1": 0.0528,
+  "all100_mode_macro_f1": 0.0668,
+  "dev20_mode_macro_f1": 0.1071,
+  "test80_mode_macro_f1": 0.0543,
+  "all100_scope_action_macro_f1": 0.1321,
+  "dev20_scope_action_macro_f1": 0.1233,
+  "test80_scope_action_macro_f1": 0.131,
+  "all100_boundary_macro_f1": 0.3361,
+  "dev20_boundary_macro_f1": 0.5145,
+  "test80_boundary_macro_f1": 0.3313,
+  "all100_decision_joint_accuracy": 0.0,
+  "dev20_decision_joint_accuracy": 0.0,
+  "test80_decision_joint_accuracy": 0.0,
+  "all100_session_all_decisions_correct_rate": 0.0,
+  "dev20_session_all_decisions_correct_rate": 0.0,
+  "test80_session_all_decisions_correct_rate": 0.0,
+  "all100_mean_correct_prefix": 0,
+  "dev20_mean_correct_prefix": 0,
+  "test80_mean_correct_prefix": 0,
+  "latency_ms": {
+    "p50": 188.7,
+    "p95": 312.5,
+    "n": 500
+  },
+  "failures": {
+    "n": 0,
+    "rate": 0.0
+  },
+  "scope_action_confusion_100": {
+    "SWITCH": {
+      "KEEP": 35,
+      "SWITCH": 60,
+      "BLOCK": 45,
+      "ASK": 5
+    },
+    "EXPAND": {
+      "SWITCH": 40,
+      "KEEP": 10
+    },
+    "KEEP": {
+      "BLOCK": 60,
+      "SWITCH": 80,
+      "ASK": 5,
+      "KEEP": 55
+    },
+    "NARROW": {
+      "ASK": 5,
+      "BLOCK": 5,
+      "SWITCH": 35,
+      "KEEP": 15
+    },
+    "BLOCK": {
+      "BLOCK": 10,
+      "SWITCH": 10
+    },
+    "ASK": {
+      "BLOCK": 10,
+      "SWITCH": 10,
+      "KEEP": 5
+    }
+  },
+  "route_confusion_100": {
+    "KNOWLEDGE": {
+      "DOCUMENT": 55,
+      "HYBRID": 15,
+      "TOOL": 5
+    },
+    "TOOL": {
+      "DOCUMENT": 70
+    },
+    "HYBRID": {
+      "HYBRID": 10,
+      "DOCUMENT": 5
+    },
+    "CONTEXT": {
+      "HYBRID": 55,
+      "DOCUMENT": 75,
+      "TOOL": 10,
+      "WEB": 5
+    },
+    "GENERAL": {
+      "HYBRID": 10,
+      "DOCUMENT": 10
+    },
+    "DOCUMENT": {
+      "DOCUMENT": 80,
+      "TOOL": 5
+    },
+    "BLOCK": {
+      "DOCUMENT": 20
+    },
+    "CLARIFY": {
+      "DOCUMENT": 45
+    },
+    "WEB": {
+      "DOCUMENT": 15,
+      "HYBRID": 10
+    }
+  }
+}

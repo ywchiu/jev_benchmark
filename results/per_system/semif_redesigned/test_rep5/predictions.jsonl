@@ -1,0 +1,80 @@
+{"id": "S01-T1", "route": "KNOWLEDGE", "mode": "ANSWER", "targets": ["kb_policy"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["kb_policy"]}}
+{"id": "S01-T2", "route": "DOCUMENT", "mode": "ANSWER", "targets": ["doc_policy"], "scope_action": "NARROW", "scope_after": {"boundary": "selected_only", "focus_targets": ["doc_policy", "kb_policy"]}}
+{"id": "S01-T3", "route": "CONTEXT", "mode": "TRANSFORM", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "auto", "focus_targets": ["doc_policy"]}}
+{"id": "S01-T4", "route": "TOOL", "mode": "ANSWER", "targets": ["calendar_read"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["calendar_read"]}}
+{"id": "S01-T5", "route": "CONTEXT", "mode": "ANSWER", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "auto", "focus_targets": ["doc_policy", "kb_policy"]}}
+{"id": "S02-T1", "route": "DOCUMENT", "mode": "ANSWER", "targets": ["doc_manual"], "scope_action": "KEEP", "scope_after": {"boundary": "selected_only", "focus_targets": ["doc_manual", "kb_product"]}}
+{"id": "S02-T2", "route": "WEB", "mode": "CLARIFY", "targets": ["web_search"], "scope_action": "ASK", "scope_after": {"boundary": "selected_only", "focus_targets": ["doc_manual"]}}
+{"id": "S02-T3", "route": "WEB", "mode": "CLARIFY", "targets": ["web_search"], "scope_action": "EXPAND", "scope_after": {"boundary": "auto", "focus_targets": ["web_search"]}}
+{"id": "S02-T4", "route": "DOCUMENT", "mode": "ANSWER", "targets": ["doc_manual"], "scope_action": "NARROW", "scope_after": {"boundary": "selected_only", "focus_targets": ["doc_manual", "kb_product"]}}
+{"id": "S02-T5", "route": "CONTEXT", "mode": "ANALYZE", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "selected_only", "focus_targets": ["doc_manual", "kb_product"]}}
+{"id": "S03-T1", "route": "KNOWLEDGE", "mode": "ANSWER", "targets": ["kb_product"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["kb_product"]}}
+{"id": "S03-T2", "route": "KNOWLEDGE", "mode": "ANSWER", "targets": ["kb_product"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["kb_product"]}}
+{"id": "S03-T3", "route": "WEB", "mode": "ANSWER", "targets": ["web_search"], "scope_action": "EXPAND", "scope_after": {"boundary": "auto", "focus_targets": ["kb_product", "web_search"]}}
+{"id": "S03-T4", "route": "CONTEXT", "mode": "ANALYZE", "targets": [], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": []}}
+{"id": "S03-T5", "route": "WEB", "mode": "ANSWER", "targets": ["web_search"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": []}}
+{"id": "S05-T1", "route": "TOOL", "mode": "ANSWER", "targets": ["crm_read"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["crm_read"]}}
+{"id": "S05-T2", "route": "TOOL", "mode": "ANSWER", "targets": ["sql_read"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["sql_read"]}}
+{"id": "S05-T3", "route": "TOOL", "mode": "ANSWER", "targets": [], "scope_action": "KEEP", "scope_after": {"boundary": "auto", "focus_targets": ["crm_read"]}}
+{"id": "S05-T4", "route": "TOOL", "mode": "CLARIFY", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "auto", "focus_targets": []}}
+{"id": "S05-T5", "route": "TOOL", "mode": "ANSWER", "targets": [], "scope_action": "KEEP", "scope_after": {"boundary": "auto", "focus_targets": []}}
+{"id": "S06-T1", "route": "TOOL", "mode": "ANSWER", "targets": ["ticket_create"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["ticket_create"]}}
+{"id": "S06-T2", "route": "CLARIFY", "mode": "CLARIFY", "targets": [], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": []}}
+{"id": "S06-T3", "route": "TOOL", "mode": "ANSWER", "targets": ["ticket_create"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["ticket_create"]}}
+{"id": "S06-T4", "route": "CONTEXT", "mode": "TRANSFORM", "targets": [], "scope_action": "KEEP", "scope_after": {"boundary": "auto", "focus_targets": []}}
+{"id": "S06-T5", "route": "WEB", "mode": "ANSWER", "targets": ["web_search"], "scope_action": "EXPAND", "scope_after": {"boundary": "auto", "focus_targets": ["kb_product"]}}
+{"id": "S08-T1", "route": "DOCUMENT", "mode": "ANSWER", "targets": ["doc_contract"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["doc_contract"]}}
+{"id": "S08-T2", "route": "CONTEXT", "mode": "ANSWER", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "auto", "focus_targets": ["doc_contract"]}}
+{"id": "S08-T3", "route": "CONTEXT", "mode": "ANSWER", "targets": [], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["doc_contract"]}}
+{"id": "S08-T4", "route": "CONTEXT", "mode": "ANSWER", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "selected_only", "focus_targets": ["doc_contract", "kb_legal"]}}
+{"id": "S08-T5", "route": "TOOL", "mode": "ANSWER", "targets": ["sql_read"], "scope_action": "EXPAND", "scope_after": {"boundary": "auto", "focus_targets": ["sql_read"]}}
+{"id": "S09-T1", "route": "CLARIFY", "mode": "CLARIFY", "targets": [], "scope_action": "SWITCH", "scope_after": {"boundary": "internal_only", "focus_targets": ["kb_project"]}}
+{"id": "S09-T2", "route": "WEB", "mode": "CLARIFY", "targets": ["web_search"], "scope_action": "ASK", "scope_after": {"boundary": "internal_only", "focus_targets": ["kb_project"]}}
+{"id": "S09-T3", "route": "WEB", "mode": "CLARIFY", "targets": ["web_search"], "scope_action": "EXPAND", "scope_after": {"boundary": "auto", "focus_targets": ["kb_project", "kb_sales", "web_search"]}}
+{"id": "S09-T4", "route": "HYBRID", "mode": "ANALYZE", "targets": ["kb_project"], "scope_action": "EXPAND", "scope_after": {"boundary": "auto", "focus_targets": ["kb_project", "web_search"]}}
+{"id": "S09-T5", "route": "CONTEXT", "mode": "CLARIFY", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "selected_only", "focus_targets": ["kb_project"]}}
+{"id": "S11-T1", "route": "KNOWLEDGE", "mode": "ANSWER", "targets": ["kb_project"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["doc_report", "kb_project"]}}
+{"id": "S11-T2", "route": "CONTEXT", "mode": "ANSWER", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "auto", "focus_targets": ["doc_minutes", "kb_project"]}}
+{"id": "S11-T3", "route": "CONTEXT", "mode": "ANSWER", "targets": [], "scope_action": "EXPAND", "scope_after": {"boundary": "auto", "focus_targets": ["doc_minutes", "doc_report", "kb_project"]}}
+{"id": "S11-T4", "route": "CONTEXT", "mode": "CLARIFY", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "auto", "focus_targets": ["doc_report", "kb_project"]}}
+{"id": "S11-T5", "route": "CONTEXT", "mode": "CLARIFY", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "auto", "focus_targets": ["doc_minutes", "kb_project"]}}
+{"id": "S12-T1", "route": "GENERAL", "mode": "ANSWER", "targets": [], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": []}}
+{"id": "S12-T2", "route": "CONTEXT", "mode": "CLARIFY", "targets": [], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["kb_product"]}}
+{"id": "S12-T3", "route": "CONTEXT", "mode": "ANSWER", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "selected_only", "focus_targets": ["doc_manual", "kb_product"]}}
+{"id": "S12-T4", "route": "CONTEXT", "mode": "ANALYZE", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "selected_only", "focus_targets": ["doc_manual", "kb_product"]}}
+{"id": "S12-T5", "route": "CONTEXT", "mode": "TRANSFORM", "targets": [], "scope_action": "KEEP", "scope_after": {"boundary": "selected_only", "focus_targets": ["doc_manual", "kb_product"]}}
+{"id": "S13-T1", "route": "TOOL", "mode": "ANSWER", "targets": ["crm_read"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["crm_read"]}}
+{"id": "S13-T2", "route": "CONTEXT", "mode": "ANSWER", "targets": [], "scope_action": "KEEP", "scope_after": {"boundary": "auto", "focus_targets": ["crm_read"]}}
+{"id": "S13-T3", "route": "TOOL", "mode": "ANSWER", "targets": ["crm_read"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["crm_read"]}}
+{"id": "S13-T4", "route": "CONTEXT", "mode": "ANSWER", "targets": [], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["crm_read"]}}
+{"id": "S13-T5", "route": "TOOL", "mode": "ANSWER", "targets": ["calculator"], "scope_action": "EXPAND", "scope_after": {"boundary": "auto", "focus_targets": ["calculator", "crm_read", "kb_sales"]}}
+{"id": "S14-T1", "route": "HYBRID", "mode": "ANALYZE", "targets": ["kb_product"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["kb_product", "web_search"]}}
+{"id": "S14-T2", "route": "CONTEXT", "mode": "ANALYZE", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "auto", "focus_targets": ["kb_product"]}}
+{"id": "S14-T3", "route": "CONTEXT", "mode": "ANSWER", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "selected_only", "focus_targets": ["kb_product"]}}
+{"id": "S14-T4", "route": "CONTEXT", "mode": "ANSWER", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "internal_only", "focus_targets": ["kb_product"]}}
+{"id": "S14-T5", "route": "CONTEXT", "mode": "TRANSFORM", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "selected_only", "focus_targets": ["kb_product"]}}
+{"id": "S16-T1", "route": "TOOL", "mode": "ANSWER", "targets": ["sql_read"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["sql_read"]}}
+{"id": "S16-T2", "route": "TOOL", "mode": "ANSWER", "targets": [], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": []}}
+{"id": "S16-T3", "route": "TOOL", "mode": "ANSWER", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "auto", "focus_targets": []}}
+{"id": "S16-T4", "route": "TOOL", "mode": "ANSWER", "targets": ["crm_read"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["crm_read"]}}
+{"id": "S16-T5", "route": "TOOL", "mode": "ANSWER", "targets": [], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": []}}
+{"id": "S17-T1", "route": "DOCUMENT", "mode": "ANSWER", "targets": ["doc_contract"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["doc_contract"]}}
+{"id": "S17-T2", "route": "WEB", "mode": "CLARIFY", "targets": ["web_search"], "scope_action": "ASK", "scope_after": {"boundary": "auto", "focus_targets": ["doc_contract"]}}
+{"id": "S17-T3", "route": "WEB", "mode": "ANSWER", "targets": ["web_search"], "scope_action": "ASK", "scope_after": {"boundary": "auto", "focus_targets": ["doc_contract"]}}
+{"id": "S17-T4", "route": "CONTEXT", "mode": "TRANSFORM", "targets": [], "scope_action": "KEEP", "scope_after": {"boundary": "auto", "focus_targets": []}}
+{"id": "S17-T5", "route": "GENERAL", "mode": "ANSWER", "targets": [], "scope_action": "KEEP", "scope_after": {"boundary": "auto", "focus_targets": []}}
+{"id": "S18-T1", "route": "CONTEXT", "mode": "ANSWER", "targets": [], "scope_action": "KEEP", "scope_after": {"boundary": "auto", "focus_targets": ["doc_minutes", "kb_project"]}}
+{"id": "S18-T2", "route": "TOOL", "mode": "ANSWER", "targets": ["ticket_create"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["doc_minutes", "ticket_create"]}}
+{"id": "S18-T3", "route": "TOOL", "mode": "CLARIFY", "targets": ["ticket_create"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["doc_minutes", "kb_project", "ticket_create"]}}
+{"id": "S18-T4", "route": "TOOL", "mode": "ANSWER", "targets": [], "scope_action": "KEEP", "scope_after": {"boundary": "auto", "focus_targets": ["kb_project"]}}
+{"id": "S18-T5", "route": "TOOL", "mode": "ANSWER", "targets": ["calendar_read"], "scope_action": "NARROW", "scope_after": {"boundary": "auto", "focus_targets": ["calendar_read"]}}
+{"id": "S19-T1", "route": "KNOWLEDGE", "mode": "ANSWER", "targets": [], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["doc_quote"]}}
+{"id": "S19-T2", "route": "TOOL", "mode": "ANSWER", "targets": ["calendar_read"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["calendar_read"]}}
+{"id": "S19-T3", "route": "TOOL", "mode": "ANSWER", "targets": [], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["calendar_read", "crm_read"]}}
+{"id": "S19-T4", "route": "CONTEXT", "mode": "ANSWER", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "auto", "focus_targets": []}}
+{"id": "S19-T5", "route": "TOOL", "mode": "ANSWER", "targets": ["calculator"], "scope_action": "EXPAND", "scope_after": {"boundary": "auto", "focus_targets": ["calculator", "kb_sales"]}}
+{"id": "S20-T1", "route": "DOCUMENT", "mode": "ANSWER", "targets": ["doc_manual"], "scope_action": "SWITCH", "scope_after": {"boundary": "auto", "focus_targets": ["doc_manual", "kb_product"]}}
+{"id": "S20-T2", "route": "CONTEXT", "mode": "ANALYZE", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "selected_only", "focus_targets": ["doc_manual", "kb_product"]}}
+{"id": "S20-T3", "route": "DOCUMENT", "mode": "CLARIFY", "targets": ["doc_manual"], "scope_action": "NARROW", "scope_after": {"boundary": "selected_only", "focus_targets": ["doc_manual", "kb_product"]}}
+{"id": "S20-T4", "route": "CONTEXT", "mode": "CLARIFY", "targets": [], "scope_action": "NARROW", "scope_after": {"boundary": "selected_only", "focus_targets": ["doc_manual", "kb_product"]}}
+{"id": "S20-T5", "route": "WEB", "mode": "CLARIFY", "targets": ["web_search"], "scope_action": "EXPAND", "scope_after": {"boundary": "auto", "focus_targets": ["doc_manual", "kb_product", "web_search"]}}

@@ -1,0 +1,407 @@
+{
+  "track": "teacher_forced",
+  "split": "test",
+  "adapter": "adapters_ext:semif_redesigned",
+  "records": [
+    {
+      "id": "S01-T1",
+      "latency_ms": 594.6437499951571,
+      "error": null
+    },
+    {
+      "id": "S01-T2",
+      "latency_ms": 612.9327079979703,
+      "error": null
+    },
+    {
+      "id": "S01-T3",
+      "latency_ms": 618.774458009284,
+      "error": null
+    },
+    {
+      "id": "S01-T4",
+      "latency_ms": 689.2879160004668,
+      "error": null
+    },
+    {
+      "id": "S01-T5",
+      "latency_ms": 671.3752909563482,
+      "error": null
+    },
+    {
+      "id": "S02-T1",
+      "latency_ms": 605.5137499934062,
+      "error": null
+    },
+    {
+      "id": "S02-T2",
+      "latency_ms": 620.5452919821255,
+      "error": null
+    },
+    {
+      "id": "S02-T3",
+      "latency_ms": 625.3647079574876,
+      "error": null
+    },
+    {
+      "id": "S02-T4",
+      "latency_ms": 634.2047919752076,
+      "error": null
+    },
+    {
+      "id": "S02-T5",
+      "latency_ms": 633.7102499674074,
+      "error": null
+    },
+    {
+      "id": "S03-T1",
+      "latency_ms": 583.6147500085644,
+      "error": null
+    },
+    {
+      "id": "S03-T2",
+      "latency_ms": 596.9569580047391,
+      "error": null
+    },
+    {
+      "id": "S03-T3",
+      "latency_ms": 605.0132499658503,
+      "error": null
+    },
+    {
+      "id": "S03-T4",
+      "latency_ms": 621.4903329964727,
+      "error": null
+    },
+    {
+      "id": "S03-T5",
+      "latency_ms": 628.2854169839993,
+      "error": null
+    },
+    {
+      "id": "S05-T1",
+      "latency_ms": 582.9085829900578,
+      "error": null
+    },
+    {
+      "id": "S05-T2",
+      "latency_ms": 589.6504999836907,
+      "error": null
+    },
+    {
+      "id": "S05-T3",
+      "latency_ms": 603.5184579668567,
+      "error": null
+    },
+    {
+      "id": "S05-T4",
+      "latency_ms": 660.3650419856422,
+      "error": null
+    },
+    {
+      "id": "S05-T5",
+      "latency_ms": 749.4758330285549,
+      "error": null
+    },
+    {
+      "id": "S06-T1",
+      "latency_ms": 606.1832910054363,
+      "error": null
+    },
+    {
+      "id": "S06-T2",
+      "latency_ms": 996.4772500097752,
+      "error": null
+    },
+    {
+      "id": "S06-T3",
+      "latency_ms": 648.7007919931784,
+      "error": null
+    },
+    {
+      "id": "S06-T4",
+      "latency_ms": 597.1709169680253,
+      "error": null
+    },
+    {
+      "id": "S06-T5",
+      "latency_ms": 834.931791992858,
+      "error": null
+    },
+    {
+      "id": "S08-T1",
+      "latency_ms": 570.1815409702249,
+      "error": null
+    },
+    {
+      "id": "S08-T2",
+      "latency_ms": 584.3307499890216,
+      "error": null
+    },
+    {
+      "id": "S08-T3",
+      "latency_ms": 589.7372079780325,
+      "error": null
+    },
+    {
+      "id": "S08-T4",
+      "latency_ms": 609.8537090001628,
+      "error": null
+    },
+    {
+      "id": "S08-T5",
+      "latency_ms": 605.712125019636,
+      "error": null
+    },
+    {
+      "id": "S09-T1",
+      "latency_ms": 562.7418750082143,
+      "error": null
+    },
+    {
+      "id": "S09-T2",
+      "latency_ms": 574.6734999702312,
+      "error": null
+    },
+    {
+      "id": "S09-T3",
+      "latency_ms": 581.8041670136154,
+      "error": null
+    },
+    {
+      "id": "S09-T4",
+      "latency_ms": 587.4424169887789,
+      "error": null
+    },
+    {
+      "id": "S09-T5",
+      "latency_ms": 600.5532919662073,
+      "error": null
+    },
+    {
+      "id": "S11-T1",
+      "latency_ms": 552.3644589702599,
+      "error": null
+    },
+    {
+      "id": "S11-T2",
+      "latency_ms": 576.7616249504499,
+      "error": null
+    },
+    {
+      "id": "S11-T3",
+      "latency_ms": 592.1022499678656,
+      "error": null
+    },
+    {
+      "id": "S11-T4",
+      "latency_ms": 607.0412500412203,
+      "error": null
+    },
+    {
+      "id": "S11-T5",
+      "latency_ms": 605.0853749620728,
+      "error": null
+    },
+    {
+      "id": "S12-T1",
+      "latency_ms": 563.3938749670051,
+      "error": null
+    },
+    {
+      "id": "S12-T2",
+      "latency_ms": 579.3944170000032,
+      "error": null
+    },
+    {
+      "id": "S12-T3",
+      "latency_ms": 583.6229170090519,
+      "error": null
+    },
+    {
+      "id": "S12-T4",
+      "latency_ms": 599.4458339991979,
+      "error": null
+    },
+    {
+      "id": "S12-T5",
+      "latency_ms": 599.084582994692,
+      "error": null
+    },
+    {
+      "id": "S13-T1",
+      "latency_ms": 561.9332499918528,
+      "error": null
+    },
+    {
+      "id": "S13-T2",
+      "latency_ms": 576.9955000141636,
+      "error": null
+    },
+    {
+      "id": "S13-T3",
+      "latency_ms": 598.8473750185221,
+      "error": null
+    },
+    {
+      "id": "S13-T4",
+      "latency_ms": 593.9593749935739,
+      "error": null
+    },
+    {
+      "id": "S13-T5",
+      "latency_ms": 601.7084589693695,
+      "error": null
+    },
+    {
+      "id": "S14-T1",
+      "latency_ms": 559.3833749881014,
+      "error": null
+    },
+    {
+      "id": "S14-T2",
+      "latency_ms": 646.7688750126399,
+      "error": null
+    },
+    {
+      "id": "S14-T3",
+      "latency_ms": 629.2946659959853,
+      "error": null
+    },
+    {
+      "id": "S14-T4",
+      "latency_ms": 639.4843339803629,
+      "error": null
+    },
+    {
+      "id": "S14-T5",
+      "latency_ms": 643.2093750336207,
+      "error": null
+    },
+    {
+      "id": "S16-T1",
+      "latency_ms": 605.2563340053894,
+      "error": null
+    },
+    {
+      "id": "S16-T2",
+      "latency_ms": 619.0802089986391,
+      "error": null
+    },
+    {
+      "id": "S16-T3",
+      "latency_ms": 625.418291951064,
+      "error": null
+    },
+    {
+      "id": "S16-T4",
+      "latency_ms": 640.5017079669051,
+      "error": null
+    },
+    {
+      "id": "S16-T5",
+      "latency_ms": 644.4690419593826,
+      "error": null
+    },
+    {
+      "id": "S17-T1",
+      "latency_ms": 607.5206249952316,
+      "error": null
+    },
+    {
+      "id": "S17-T2",
+      "latency_ms": 626.8140419851989,
+      "error": null
+    },
+    {
+      "id": "S17-T3",
+      "latency_ms": 619.7767090052366,
+      "error": null
+    },
+    {
+      "id": "S17-T4",
+      "latency_ms": 641.7839589994401,
+      "error": null
+    },
+    {
+      "id": "S17-T5",
+      "latency_ms": 657.8467499930412,
+      "error": null
+    },
+    {
+      "id": "S18-T1",
+      "latency_ms": 613.9370839809999,
+      "error": null
+    },
+    {
+      "id": "S18-T2",
+      "latency_ms": 629.1065840050578,
+      "error": null
+    },
+    {
+      "id": "S18-T3",
+      "latency_ms": 633.2731249858625,
+      "error": null
+    },
+    {
+      "id": "S18-T4",
+      "latency_ms": 636.5520419785753,
+      "error": null
+    },
+    {
+      "id": "S18-T5",
+      "latency_ms": 640.7955000177026,
+      "error": null
+    },
+    {
+      "id": "S19-T1",
+      "latency_ms": 590.8204169827513,
+      "error": null
+    },
+    {
+      "id": "S19-T2",
+      "latency_ms": 619.2843750468455,
+      "error": null
+    },
+    {
+      "id": "S19-T3",
+      "latency_ms": 637.9163329838775,
+      "error": null
+    },
+    {
+      "id": "S19-T4",
+      "latency_ms": 644.0793750225566,
+      "error": null
+    },
+    {
+      "id": "S19-T5",
+      "latency_ms": 652.0938750472851,
+      "error": null
+    },
+    {
+      "id": "S20-T1",
+      "latency_ms": 594.8340829927474,
+      "error": null
+    },
+    {
+      "id": "S20-T2",
+      "latency_ms": 614.5889590261504,
+      "error": null
+    },
+    {
+      "id": "S20-T3",
+      "latency_ms": 629.1253329836763,
+      "error": null
+    },
+    {
+      "id": "S20-T4",
+      "latency_ms": 614.9808340123855,
+      "error": null
+    },
+    {
+      "id": "S20-T5",
+      "latency_ms": 614.5491249626502,
+      "error": null
+    }
+  ]
+}

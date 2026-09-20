@@ -1,0 +1,107 @@
+{
+  "track": "teacher_forced",
+  "split": "dev",
+  "adapter": "adapters_ext:jev_redesigned",
+  "records": [
+    {
+      "id": "S04-T1",
+      "latency_ms": 772.8139590471983,
+      "error": null
+    },
+    {
+      "id": "S04-T2",
+      "latency_ms": 714.3069170415401,
+      "error": null
+    },
+    {
+      "id": "S04-T3",
+      "latency_ms": 769.3409170024097,
+      "error": null
+    },
+    {
+      "id": "S04-T4",
+      "latency_ms": 736.5721249952912,
+      "error": null
+    },
+    {
+      "id": "S04-T5",
+      "latency_ms": 717.8292089956813,
+      "error": null
+    },
+    {
+      "id": "S07-T1",
+      "latency_ms": 728.0008750385605,
+      "error": null
+    },
+    {
+      "id": "S07-T2",
+      "latency_ms": 728.9921659976244,
+      "error": null
+    },
+    {
+      "id": "S07-T3",
+      "latency_ms": 765.8553330111317,
+      "error": null
+    },
+    {
+      "id": "S07-T4",
+      "latency_ms": 741.9194169924594,
+      "error": null
+    },
+    {
+      "id": "S07-T5",
+      "latency_ms": 739.6536659798585,
+      "error": null
+    },
+    {
+      "id": "S10-T1",
+      "latency_ms": 718.0377499898896,
+      "error": null
+    },
+    {
+      "id": "S10-T2",
+      "latency_ms": 768.638874986209,
+      "error": null
+    },
+    {
+      "id": "S10-T3",
+      "latency_ms": 754.1716250125319,
+      "error": null
+    },
+    {
+      "id": "S10-T4",
+      "latency_ms": 715.518459037412,
+      "error": null
+    },
+    {
+      "id": "S10-T5",
+      "latency_ms": 791.1164580145851,
+      "error": null
+    },
+    {
+      "id": "S15-T1",
+      "latency_ms": 726.0824170080014,
+      "error": null
+    },
+    {
+      "id": "S15-T2",
+      "latency_ms": 721.5203329687938,
+      "error": null
+    },
+    {
+      "id": "S15-T3",
+      "latency_ms": 738.1217089714482,
+      "error": null
+    },
+    {
+      "id": "S15-T4",
+      "latency_ms": 754.163832985796,
+      "error": null
+    },
+    {
+      "id": "S15-T5",
+      "latency_ms": 761.023374972865,
+      "error": null
+    }
+  ]
+}

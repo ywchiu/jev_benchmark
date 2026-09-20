@@ -1,0 +1,107 @@
+{
+  "track": "teacher_forced",
+  "split": "dev",
+  "adapter": "adapters_ext:jev_redesigned",
+  "records": [
+    {
+      "id": "S04-T1",
+      "latency_ms": 742.9223750368692,
+      "error": null
+    },
+    {
+      "id": "S04-T2",
+      "latency_ms": 710.8286250149831,
+      "error": null
+    },
+    {
+      "id": "S04-T3",
+      "latency_ms": 802.7849580394104,
+      "error": null
+    },
+    {
+      "id": "S04-T4",
+      "latency_ms": 728.8618750171736,
+      "error": null
+    },
+    {
+      "id": "S04-T5",
+      "latency_ms": 741.6191670345142,
+      "error": null
+    },
+    {
+      "id": "S07-T1",
+      "latency_ms": 711.9513329816982,
+      "error": null
+    },
+    {
+      "id": "S07-T2",
+      "latency_ms": 703.7545829662122,
+      "error": null
+    },
+    {
+      "id": "S07-T3",
+      "latency_ms": 745.3955420060083,
+      "error": null
+    },
+    {
+      "id": "S07-T4",
+      "latency_ms": 724.915416969452,
+      "error": null
+    },
+    {
+      "id": "S07-T5",
+      "latency_ms": 778.9129169541411,
+      "error": null
+    },
+    {
+      "id": "S10-T1",
+      "latency_ms": 709.960458043497,
+      "error": null
+    },
+    {
+      "id": "S10-T2",
+      "latency_ms": 790.5268330359831,
+      "error": null
+    },
+    {
+      "id": "S10-T3",
+      "latency_ms": 731.4872500137426,
+      "error": null
+    },
+    {
+      "id": "S10-T4",
+      "latency_ms": 781.218042015098,
+      "error": null
+    },
+    {
+      "id": "S10-T5",
+      "latency_ms": 727.94466704363,
+      "error": null
+    },
+    {
+      "id": "S15-T1",
+      "latency_ms": 788.8435419881716,
+      "error": null
+    },
+    {
+      "id": "S15-T2",
+      "latency_ms": 721.426333009731,
+      "error": null
+    },
+    {
+      "id": "S15-T3",
+      "latency_ms": 799.0142499911599,
+      "error": null
+    },
+    {
+      "id": "S15-T4",
+      "latency_ms": 719.976750027854,
+      "error": null
+    },
+    {
+      "id": "S15-T5",
+      "latency_ms": 762.718332989607,
+      "error": null
+    }
+  ]
+}

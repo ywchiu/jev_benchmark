@@ -1,0 +1,111 @@
+{
+  "system": "Jev 1.13.0",
+  "repeats": 5,
+  "turns_per_repeat": 100,
+  "dev_turns": 20,
+  "test_turns": 80,
+  "all100_route_accuracy": 0.906,
+  "dev20_route_accuracy": 0.91,
+  "test80_route_accuracy": 0.905,
+  "all100_mode_accuracy": 0.916,
+  "dev20_mode_accuracy": 1.0,
+  "test80_mode_accuracy": 0.895,
+  "all100_scope_action_accuracy": 0.858,
+  "dev20_scope_action_accuracy": 0.85,
+  "test80_scope_action_accuracy": 0.86,
+  "all100_boundary_accuracy": 0.844,
+  "dev20_boundary_accuracy": 0.92,
+  "test80_boundary_accuracy": 0.825,
+  "all100_route_macro_f1": 0.8709,
+  "dev20_route_macro_f1": 0.9309,
+  "test80_route_macro_f1": 0.8579,
+  "all100_mode_macro_f1": 0.918,
+  "dev20_mode_macro_f1": 1.0,
+  "test80_mode_macro_f1": 0.8959,
+  "all100_scope_action_macro_f1": 0.881,
+  "dev20_scope_action_macro_f1": 0.8443,
+  "test80_scope_action_macro_f1": 0.8866,
+  "all100_boundary_macro_f1": 0.8036,
+  "dev20_boundary_macro_f1": 0.9044,
+  "test80_boundary_macro_f1": 0.7598,
+  "all100_decision_joint_accuracy": 0.614,
+  "dev20_decision_joint_accuracy": 0.71,
+  "test80_decision_joint_accuracy": 0.59,
+  "all100_session_all_decisions_correct_rate": 0.11,
+  "dev20_session_all_decisions_correct_rate": 0.3,
+  "test80_session_all_decisions_correct_rate": 0.0625,
+  "all100_mean_correct_prefix": 1.66,
+  "dev20_mean_correct_prefix": 2.55,
+  "test80_mean_correct_prefix": 1.4374,
+  "latency_ms": {
+    "p50": 749.0,
+    "p95": 818.2,
+    "n": 500
+  },
+  "failures": {
+    "n": 0,
+    "rate": 0.0
+  },
+  "scope_action_confusion_100": {
+    "SWITCH": {
+      "SWITCH": 115,
+      "KEEP": 15,
+      "EXPAND": 15
+    },
+    "EXPAND": {
+      "KEEP": 15,
+      "EXPAND": 35
+    },
+    "KEEP": {
+      "KEEP": 185,
+      "SWITCH": 10,
+      "EXPAND": 5
+    },
+    "NARROW": {
+      "NARROW": 49,
+      "KEEP": 11
+    },
+    "BLOCK": {
+      "BLOCK": 20
+    },
+    "ASK": {
+      "ASK": 25
+    }
+  },
+  "route_confusion_100": {
+    "KNOWLEDGE": {
+      "KNOWLEDGE": 65,
+      "DOCUMENT": 10
+    },
+    "TOOL": {
+      "TOOL": 70
+    },
+    "HYBRID": {
+      "HYBRID": 15
+    },
+    "CONTEXT": {
+      "CONTEXT": 141,
+      "DOCUMENT": 4
+    },
+    "GENERAL": {
+      "GENERAL": 20
+    },
+    "DOCUMENT": {
+      "DOCUMENT": 85
+    },
+    "BLOCK": {
+      "BLOCK": 20
+    },
+    "CLARIFY": {
+      "CLARIFY": 17,
+      "WEB": 4,
+      "TOOL": 14,
+      "CONTEXT": 5,
+      "GENERAL": 5
+    },
+    "WEB": {
+      "WEB": 20,
+      "HYBRID": 5
+    }
+  }
+}

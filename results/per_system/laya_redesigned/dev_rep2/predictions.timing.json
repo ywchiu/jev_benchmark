@@ -1,0 +1,107 @@
+{
+  "track": "teacher_forced",
+  "split": "dev",
+  "adapter": "adapters_ext:laya_redesigned",
+  "records": [
+    {
+      "id": "S04-T1",
+      "latency_ms": 280.909166962374,
+      "error": null
+    },
+    {
+      "id": "S04-T2",
+      "latency_ms": 318.3919579605572,
+      "error": null
+    },
+    {
+      "id": "S04-T3",
+      "latency_ms": 271.49058401118964,
+      "error": null
+    },
+    {
+      "id": "S04-T4",
+      "latency_ms": 294.5192079641856,
+      "error": null
+    },
+    {
+      "id": "S04-T5",
+      "latency_ms": 287.655292020645,
+      "error": null
+    },
+    {
+      "id": "S07-T1",
+      "latency_ms": 251.940458023455,
+      "error": null
+    },
+    {
+      "id": "S07-T2",
+      "latency_ms": 253.85362497763708,
+      "error": null
+    },
+    {
+      "id": "S07-T3",
+      "latency_ms": 273.41270801844075,
+      "error": null
+    },
+    {
+      "id": "S07-T4",
+      "latency_ms": 174.70641701947898,
+      "error": null
+    },
+    {
+      "id": "S07-T5",
+      "latency_ms": 283.127875009086,
+      "error": null
+    },
+    {
+      "id": "S10-T1",
+      "latency_ms": 279.2480830103159,
+      "error": null
+    },
+    {
+      "id": "S10-T2",
+      "latency_ms": 183.74316702829674,
+      "error": null
+    },
+    {
+      "id": "S10-T3",
+      "latency_ms": 195.96241699764505,
+      "error": null
+    },
+    {
+      "id": "S10-T4",
+      "latency_ms": 307.46295902645215,
+      "error": null
+    },
+    {
+      "id": "S10-T5",
+      "latency_ms": 311.90679100109264,
+      "error": null
+    },
+    {
+      "id": "S15-T1",
+      "latency_ms": 260.7812499627471,
+      "error": null
+    },
+    {
+      "id": "S15-T2",
+      "latency_ms": 312.5435830443166,
+      "error": null
+    },
+    {
+      "id": "S15-T3",
+      "latency_ms": 305.90287497034296,
+      "error": null
+    },
+    {
+      "id": "S15-T4",
+      "latency_ms": 217.99479197943583,
+      "error": null
+    },
+    {
+      "id": "S15-T5",
+      "latency_ms": 269.0695829805918,
+      "error": null
+    }
+  ]
+}

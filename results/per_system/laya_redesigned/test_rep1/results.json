@@ -1,0 +1,3533 @@
+{
+  "n": 80,
+  "missing": 0,
+  "schema_accuracy": 1.0,
+  "semantic_accuracy": 0.0,
+  "route_accuracy": 0.175,
+  "mode_accuracy": 0.0875,
+  "targets_accuracy": 0.0,
+  "scope_action_accuracy": 0.2625,
+  "scope_state_accuracy": 0.15,
+  "joint_accuracy": 0.0,
+  "route_macro_f1": 0.05282651072124757,
+  "per_route": {
+    "KNOWLEDGE": {
+      "n": 11,
+      "f1": 0.0
+    },
+    "DOCUMENT": {
+      "n": 14,
+      "f1": 0.34210526315789475
+    },
+    "CONTEXT": {
+      "n": 23,
+      "f1": 0.0
+    },
+    "TOOL": {
+      "n": 13,
+      "f1": 0.0
+    },
+    "CLARIFY": {
+      "n": 7,
+      "f1": 0.0
+    },
+    "WEB": {
+      "n": 5,
+      "f1": 0.0
+    },
+    "BLOCK": {
+      "n": 3,
+      "f1": 0.0
+    },
+    "GENERAL": {
+      "n": 2,
+      "f1": 0.0
+    },
+    "HYBRID": {
+      "n": 2,
+      "f1": 0.13333333333333333
+    }
+  },
+  "confusion_matrix": {
+    "KNOWLEDGE": {
+      "DOCUMENT": 7,
+      "HYBRID": 3,
+      "TOOL": 1
+    },
+    "DOCUMENT": {
+      "DOCUMENT": 13,
+      "TOOL": 1
+    },
+    "CONTEXT": {
+      "DOCUMENT": 13,
+      "HYBRID": 7,
+      "TOOL": 2,
+      "WEB": 1
+    },
+    "TOOL": {
+      "DOCUMENT": 13
+    },
+    "CLARIFY": {
+      "DOCUMENT": 7
+    },
+    "WEB": {
+      "DOCUMENT": 3,
+      "HYBRID": 2
+    },
+    "BLOCK": {
+      "DOCUMENT": 3
+    },
+    "GENERAL": {
+      "DOCUMENT": 2
+    },
+    "HYBRID": {
+      "DOCUMENT": 1,
+      "HYBRID": 1
+    }
+  },
+  "session_all_correct_rate": 0.0,
+  "mean_correct_prefix": 0.0,
+  "sessions": {
+    "S01": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    },
+    "S02": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    },
+    "S03": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    },
+    "S05": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    },
+    "S06": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    },
+    "S08": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    },
+    "S09": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    },
+    "S11": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    },
+    "S12": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    },
+    "S13": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    },
+    "S14": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    },
+    "S16": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    },
+    "S17": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    },
+    "S18": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    },
+    "S19": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    },
+    "S20": {
+      "all_correct": false,
+      "correct_prefix": 0,
+      "evaluated_turns": 5,
+      "first_error": 1
+    }
+  },
+  "errors": [
+    {
+      "id": "S01-T1",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "KNOWLEDGE",
+        "targets": [
+          "kb_policy"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_policy"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S01-T1",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_project",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S01-T2",
+      "failed_fields": [
+        "semantic",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_policy"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_policy"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S01-T2",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_policy",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S01-T3",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "TRANSFORM",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_policy"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S01-T3",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_policy"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S01-T4",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "TOOL",
+        "targets": [
+          "calendar_read"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "calendar_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S01-T4",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_contract"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "crm_read",
+            "doc_contract",
+            "doc_policy",
+            "kb_policy"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S01-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_policy"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S01-T5",
+        "route": "HYBRID",
+        "mode": "CLARIFY",
+        "targets": [
+          "calendar_read",
+          "doc_quote",
+          "kb_policy"
+        ],
+        "scope_action": "ASK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "calendar_read"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S02-T1",
+      "failed_fields": [
+        "semantic",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_manual"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_manual"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S02-T1",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_manual",
+            "doc_oldpolicy",
+            "kb_project",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S02-T2",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CLARIFY",
+        "targets": [],
+        "mode": "CLARIFY",
+        "scope_action": "ASK",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_manual"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S02-T2",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calculator",
+            "doc_manual",
+            "doc_oldpolicy",
+            "kb_legal"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S02-T3",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "WEB",
+        "targets": [
+          "web_search"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "EXPAND",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "web_search"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S02-T3",
+        "route": "DOCUMENT",
+        "mode": "BLOCK",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_manual",
+            "doc_oldpolicy",
+            "kb_project",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S02-T4",
+      "failed_fields": [
+        "semantic",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_manual"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_manual"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S02-T4",
+        "route": "DOCUMENT",
+        "mode": "BLOCK",
+        "targets": [
+          "doc_contract"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "crm_read",
+            "doc_contract",
+            "kb_product",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S02-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "ANALYZE",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_manual"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S02-T5",
+        "route": "HYBRID",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy",
+          "kb_archive",
+          "ticket_create"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_manual",
+            "doc_oldpolicy",
+            "kb_archive",
+            "ticket_create"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S03-T1",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "KNOWLEDGE",
+        "targets": [
+          "kb_product"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_product"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S03-T1",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": []
+        }
+      }
+    },
+    {
+      "id": "S03-T2",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "KNOWLEDGE",
+        "targets": [
+          "kb_product"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_product"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S03-T2",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_policy",
+            "kb_product",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S03-T3",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "WEB",
+        "targets": [
+          "web_search"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "web_search"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S03-T3",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_policy",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S03-T4",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "ANALYZE",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "web_search"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S03-T4",
+        "route": "TOOL",
+        "mode": "CLARIFY",
+        "targets": [
+          "ticket_create"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S03-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "KNOWLEDGE",
+        "targets": [
+          "kb_product"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_product"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S03-T5",
+        "route": "HYBRID",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy",
+          "kb_sales",
+          "ticket_create"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_sales",
+            "ticket_create",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S05-T1",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "TOOL",
+        "targets": [
+          "crm_read"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "crm_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S05-T1",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": []
+        }
+      }
+    },
+    {
+      "id": "S05-T2",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CLARIFY",
+        "targets": [],
+        "mode": "CLARIFY",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "crm_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S05-T2",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "crm_read",
+            "doc_oldpolicy",
+            "kb_archive",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S05-T3",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "TOOL",
+        "targets": [
+          "sql_read"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "sql_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S05-T3",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "crm_read"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S05-T4",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "BLOCK",
+        "targets": [],
+        "mode": "BLOCK",
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "sql_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S05-T4",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "crm_read",
+            "doc_oldpolicy",
+            "kb_archive",
+            "sql_read"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S05-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "TRANSFORM",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "sql_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S05-T5",
+        "route": "HYBRID",
+        "mode": "BLOCK",
+        "targets": [
+          "calendar_read",
+          "doc_oldpolicy",
+          "kb_legal"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calendar_read",
+            "doc_contract",
+            "kb_archive",
+            "sql_read"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S06-T1",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "targets",
+        "scope_action",
+        "joint"
+      ],
+      "gold": {
+        "route": "CLARIFY",
+        "targets": [],
+        "mode": "CLARIFY",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": []
+        }
+      },
+      "prediction": {
+        "id": "S06-T1",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": []
+        }
+      }
+    },
+    {
+      "id": "S06-T2",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "TRANSFORM",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": []
+        }
+      },
+      "prediction": {
+        "id": "S06-T2",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": []
+        }
+      }
+    },
+    {
+      "id": "S06-T3",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "TOOL",
+        "targets": [
+          "ticket_create"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "ticket_create"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S06-T3",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_archive",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S06-T4",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "TRANSFORM",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "ticket_create"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S06-T4",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_policy",
+            "ticket_create",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S06-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "KNOWLEDGE",
+        "targets": [
+          "kb_product"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_product"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S06-T5",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calendar_read",
+            "doc_oldpolicy",
+            "kb_archive",
+            "ticket_create"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S08-T1",
+      "failed_fields": [
+        "semantic",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_contract"
+        ],
+        "mode": "TRANSFORM",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_contract"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S08-T1",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "crm_read",
+            "doc_contract",
+            "doc_oldpolicy",
+            "kb_legal"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S08-T2",
+      "failed_fields": [
+        "semantic",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_contract"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_contract"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S08-T2",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_legal",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S08-T3",
+      "failed_fields": [
+        "semantic",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_quote"
+        ],
+        "mode": "ANALYZE",
+        "scope_action": "EXPAND",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_contract",
+            "doc_quote"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S08-T3",
+        "route": "DOCUMENT",
+        "mode": "BLOCK",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_contract",
+            "doc_oldpolicy",
+            "kb_legal",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S08-T4",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "TRANSFORM",
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_contract"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S08-T4",
+        "route": "DOCUMENT",
+        "mode": "BLOCK",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_contract",
+            "doc_oldpolicy",
+            "doc_quote",
+            "kb_legal",
+            "ticket_create"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S08-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "TOOL",
+        "targets": [
+          "sql_read"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "EXPAND",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_contract",
+            "sql_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S08-T5",
+        "route": "DOCUMENT",
+        "mode": "BLOCK",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calendar_read",
+            "doc_contract",
+            "doc_oldpolicy",
+            "kb_legal"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S09-T1",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "KNOWLEDGE",
+        "targets": [
+          "kb_project"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "kb_project"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S09-T1",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_contract",
+            "kb_project",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S09-T2",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CLARIFY",
+        "targets": [],
+        "mode": "CLARIFY",
+        "scope_action": "ASK",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "kb_project"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S09-T2",
+        "route": "DOCUMENT",
+        "mode": "BLOCK",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_legal",
+            "kb_project",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S09-T3",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "WEB",
+        "targets": [
+          "web_search"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "EXPAND",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_project",
+            "web_search"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S09-T3",
+        "route": "HYBRID",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy",
+          "kb_policy",
+          "sql_read"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_policy",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S09-T4",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "ANALYZE",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_project",
+            "web_search"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S09-T4",
+        "route": "HYBRID",
+        "mode": "CLARIFY",
+        "targets": [
+          "calendar_read",
+          "doc_oldpolicy",
+          "kb_legal"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_contract",
+            "kb_legal",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S09-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "KNOWLEDGE",
+        "targets": [
+          "kb_project"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "kb_project"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S09-T5",
+        "route": "HYBRID",
+        "mode": "BLOCK",
+        "targets": [
+          "calendar_read",
+          "doc_oldpolicy",
+          "kb_project"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calendar_read",
+            "doc_oldpolicy",
+            "kb_project"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S11-T1",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "KNOWLEDGE",
+        "targets": [
+          "kb_project"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_project"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S11-T1",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": []
+        }
+      }
+    },
+    {
+      "id": "S11-T2",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_minutes"
+        ],
+        "mode": "TRANSFORM",
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_minutes"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S11-T2",
+        "route": "TOOL",
+        "mode": "CLARIFY",
+        "targets": [
+          "calendar_read"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_project",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S11-T3",
+      "failed_fields": [
+        "semantic",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_report"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_report"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S11-T3",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_minutes"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S11-T4",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CLARIFY",
+        "targets": [],
+        "mode": "CLARIFY",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_report"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S11-T4",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calendar_read",
+            "doc_oldpolicy",
+            "doc_report",
+            "kb_project"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S11-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_minutes"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S11-T5",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calculator",
+            "doc_oldpolicy",
+            "doc_report",
+            "kb_project"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S12-T1",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "GENERAL",
+        "targets": [],
+        "mode": "ANSWER",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": []
+        }
+      },
+      "prediction": {
+        "id": "S12-T1",
+        "route": "DOCUMENT",
+        "mode": "BLOCK",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calculator",
+            "doc_oldpolicy",
+            "kb_project"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S12-T2",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "KNOWLEDGE",
+        "targets": [
+          "kb_product"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_product"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S12-T2",
+        "route": "TOOL",
+        "mode": "CLARIFY",
+        "targets": [
+          "ticket_create"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_project",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S12-T3",
+      "failed_fields": [
+        "semantic",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_manual"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_manual"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S12-T3",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_legal",
+            "kb_product",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S12-T4",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "ANALYZE",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_manual"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S12-T4",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calendar_read",
+            "doc_oldpolicy",
+            "kb_policy"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S12-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "TRANSFORM",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_manual"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S12-T5",
+        "route": "HYBRID",
+        "mode": "CLARIFY",
+        "targets": [
+          "calendar_read",
+          "doc_oldpolicy",
+          "kb_archive"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calendar_read",
+            "doc_oldpolicy",
+            "kb_product"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S13-T1",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "TOOL",
+        "targets": [
+          "crm_read"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "crm_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S13-T1",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_project",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S13-T2",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "ANSWER",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "crm_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S13-T2",
+        "route": "DOCUMENT",
+        "mode": "BLOCK",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "crm_read"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S13-T3",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "joint"
+      ],
+      "gold": {
+        "route": "TOOL",
+        "targets": [
+          "crm_read"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "crm_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S13-T3",
+        "route": "DOCUMENT",
+        "mode": "BLOCK",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "crm_read"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S13-T4",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "ANALYZE",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "crm_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S13-T4",
+        "route": "WEB",
+        "mode": "BLOCK",
+        "targets": [
+          "web_search"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "crm_read",
+            "doc_oldpolicy",
+            "kb_product"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S13-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "KNOWLEDGE",
+        "targets": [
+          "kb_sales"
+        ],
+        "mode": "ANALYZE",
+        "scope_action": "EXPAND",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "crm_read",
+            "kb_sales"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S13-T5",
+        "route": "HYBRID",
+        "mode": "BLOCK",
+        "targets": [
+          "calculator",
+          "doc_oldpolicy",
+          "kb_archive"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calculator",
+            "crm_read",
+            "doc_oldpolicy",
+            "kb_product"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S14-T1",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "HYBRID",
+        "targets": [
+          "kb_product",
+          "web_search"
+        ],
+        "mode": "ANALYZE",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_product",
+            "web_search"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S14-T1",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": []
+        }
+      }
+    },
+    {
+      "id": "S14-T2",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "ANALYZE",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_product",
+            "web_search"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S14-T2",
+        "route": "DOCUMENT",
+        "mode": "BLOCK",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_product",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S14-T3",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "TRANSFORM",
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "kb_product"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S14-T3",
+        "route": "HYBRID",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy",
+          "kb_policy",
+          "sql_read"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_policy",
+            "kb_product",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S14-T4",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "KNOWLEDGE",
+        "targets": [
+          "kb_product"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "kb_product"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S14-T4",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_product",
+            "kb_sales",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S14-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "TRANSFORM",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "kb_product"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S14-T5",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_product",
+            "kb_sales",
+            "ticket_create"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S16-T1",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "TOOL",
+        "targets": [
+          "sql_read"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "sql_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S16-T1",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_project",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S16-T2",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "TOOL",
+        "targets": [
+          "sql_read"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "sql_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S16-T2",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_legal",
+            "sql_read",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S16-T3",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "TRANSFORM",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "sql_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S16-T3",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "sql_read"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S16-T4",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "TOOL",
+        "targets": [
+          "crm_read"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "crm_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S16-T4",
+        "route": "DOCUMENT",
+        "mode": "BLOCK",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_policy",
+            "sql_read"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S16-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "TOOL",
+        "targets": [
+          "crm_read"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "crm_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S16-T5",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_contract"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calendar_read",
+            "crm_read",
+            "doc_contract",
+            "kb_legal"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S17-T1",
+      "failed_fields": [
+        "semantic",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_contract"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_contract"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S17-T1",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_contract",
+            "doc_oldpolicy",
+            "kb_legal",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S17-T2",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "joint"
+      ],
+      "gold": {
+        "route": "BLOCK",
+        "targets": [],
+        "mode": "BLOCK",
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_contract"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S17-T2",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_contract"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S17-T3",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "WEB",
+        "targets": [
+          "web_search"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "web_search"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S17-T3",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_oldpolicy",
+            "kb_policy",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S17-T4",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "TRANSFORM",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "web_search"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S17-T4",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S17-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "GENERAL",
+        "targets": [],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": []
+        }
+      },
+      "prediction": {
+        "id": "S17-T5",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calculator",
+            "doc_oldpolicy",
+            "kb_legal"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S18-T1",
+      "failed_fields": [
+        "semantic",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_minutes"
+        ],
+        "mode": "TRANSFORM",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_minutes"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S18-T1",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calendar_read",
+            "doc_minutes",
+            "doc_oldpolicy",
+            "kb_project"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S18-T2",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CLARIFY",
+        "targets": [],
+        "mode": "CLARIFY",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_minutes"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S18-T2",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_minutes"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_minutes",
+            "kb_archive",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S18-T3",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "TOOL",
+        "targets": [
+          "ticket_create"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "EXPAND",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_minutes",
+            "ticket_create"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S18-T3",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_minutes",
+            "doc_oldpolicy",
+            "kb_project",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S18-T4",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "TRANSFORM",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_minutes",
+            "ticket_create"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S18-T4",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_minutes"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_minutes",
+            "kb_project",
+            "ticket_create"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S18-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "BLOCK",
+        "targets": [],
+        "mode": "BLOCK",
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_minutes",
+            "ticket_create"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S18-T5",
+        "route": "DOCUMENT",
+        "mode": "BLOCK",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_minutes",
+            "doc_oldpolicy",
+            "kb_archive",
+            "ticket_create"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S19-T1",
+      "failed_fields": [
+        "semantic",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_contract",
+          "doc_quote"
+        ],
+        "mode": "ANALYZE",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_contract",
+            "doc_quote"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S19-T1",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": []
+        }
+      }
+    },
+    {
+      "id": "S19-T2",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "TOOL",
+        "targets": [
+          "crm_read",
+          "calendar_read"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "crm_read",
+            "calendar_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S19-T2",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calendar_read",
+            "doc_contract",
+            "doc_oldpolicy",
+            "doc_quote",
+            "kb_legal"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S19-T3",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "ANALYZE",
+        "scope_action": "EXPAND",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_contract",
+            "doc_quote",
+            "crm_read",
+            "calendar_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S19-T3",
+        "route": "TOOL",
+        "mode": "BLOCK",
+        "targets": [
+          "crm_read"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "crm_read",
+            "doc_oldpolicy",
+            "kb_legal"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S19-T4",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "TRANSFORM",
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_contract"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S19-T4",
+        "route": "HYBRID",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_quote",
+          "kb_legal",
+          "ticket_create"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calendar_read",
+            "crm_read",
+            "doc_contract",
+            "doc_quote",
+            "kb_legal",
+            "ticket_create"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S19-T5",
+      "failed_fields": [
+        "semantic",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "HYBRID",
+        "targets": [
+          "kb_sales",
+          "sql_read"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "kb_sales",
+            "sql_read"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S19-T5",
+        "route": "HYBRID",
+        "mode": "CLARIFY",
+        "targets": [
+          "calendar_read",
+          "doc_oldpolicy",
+          "kb_policy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "calendar_read",
+            "doc_contract",
+            "doc_oldpolicy",
+            "kb_policy"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S20-T1",
+      "failed_fields": [
+        "semantic",
+        "mode",
+        "targets",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_manual"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_manual"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S20-T1",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_manual",
+            "doc_oldpolicy",
+            "kb_project",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S20-T2",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "joint"
+      ],
+      "gold": {
+        "route": "CONTEXT",
+        "targets": [],
+        "mode": "ANALYZE",
+        "scope_action": "KEEP",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_manual"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S20-T2",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_manual"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S20-T3",
+      "failed_fields": [
+        "semantic",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "DOCUMENT",
+        "targets": [
+          "doc_manual"
+        ],
+        "mode": "ANSWER",
+        "scope_action": "NARROW",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_manual"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S20-T3",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "internal_only",
+          "focus_targets": [
+            "doc_manual",
+            "doc_oldpolicy",
+            "kb_policy",
+            "web_search"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S20-T4",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "targets",
+        "scope_action",
+        "joint"
+      ],
+      "gold": {
+        "route": "CLARIFY",
+        "targets": [],
+        "mode": "CLARIFY",
+        "scope_action": "ASK",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_manual"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S20-T4",
+        "route": "DOCUMENT",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_contract"
+        ],
+        "scope_action": "BLOCK",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "doc_manual"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S20-T5",
+      "failed_fields": [
+        "semantic",
+        "route",
+        "mode",
+        "targets",
+        "scope_action",
+        "scope_state",
+        "joint"
+      ],
+      "gold": {
+        "route": "WEB",
+        "targets": [
+          "web_search"
+        ],
+        "mode": "ANALYZE",
+        "scope_action": "EXPAND",
+        "scope_after": {
+          "boundary": "auto",
+          "focus_targets": [
+            "doc_manual",
+            "web_search"
+          ]
+        }
+      },
+      "prediction": {
+        "id": "S20-T5",
+        "route": "HYBRID",
+        "mode": "CLARIFY",
+        "targets": [
+          "doc_oldpolicy",
+          "kb_project",
+          "ticket_create"
+        ],
+        "scope_action": "SWITCH",
+        "scope_after": {
+          "boundary": "selected_only",
+          "focus_targets": [
+            "calendar_read",
+            "doc_manual",
+            "doc_oldpolicy",
+            "kb_project"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "system": "djev-spark (DiffusionGemma 26B-A4B)",
+  "repeats": 5,
+  "turns_per_repeat": 100,
+  "dev_turns": 20,
+  "test_turns": 80,
+  "all100_route_accuracy": 0.692,
+  "dev20_route_accuracy": 0.83,
+  "test80_route_accuracy": 0.6575,
+  "all100_mode_accuracy": 0.802,
+  "dev20_mode_accuracy": 0.88,
+  "test80_mode_accuracy": 0.7825,
+  "all100_scope_action_accuracy": 0.51,
+  "dev20_scope_action_accuracy": 0.5,
+  "test80_scope_action_accuracy": 0.5125,
+  "all100_boundary_accuracy": 0.904,
+  "dev20_boundary_accuracy": 0.92,
+  "test80_boundary_accuracy": 0.9,
+  "all100_route_macro_f1": 0.6379,
+  "dev20_route_macro_f1": 0.8486,
+  "test80_route_macro_f1": 0.5859,
+  "all100_mode_macro_f1": 0.6768,
+  "dev20_mode_macro_f1": 0.7995,
+  "test80_mode_macro_f1": 0.6389,
+  "all100_scope_action_macro_f1": 0.3241,
+  "dev20_scope_action_macro_f1": 0.3474,
+  "test80_scope_action_macro_f1": 0.3135,
+  "all100_boundary_macro_f1": 0.7511,
+  "dev20_boundary_macro_f1": 0.8776,
+  "test80_boundary_macro_f1": 0.7186,
+  "all100_decision_joint_accuracy": 0.322,
+  "dev20_decision_joint_accuracy": 0.33,
+  "test80_decision_joint_accuracy": 0.32,
+  "all100_session_all_decisions_correct_rate": 0.04,
+  "dev20_session_all_decisions_correct_rate": 0.0,
+  "test80_session_all_decisions_correct_rate": 0.05,
+  "all100_mean_correct_prefix": 0.85,
+  "dev20_mean_correct_prefix": 0.75,
+  "test80_mean_correct_prefix": 0.875,
+  "latency_ms": {
+    "p50": 1230.3,
+    "p95": 1470.4,
+    "n": 500
+  },
+  "failures": {
+    "n": 0,
+    "rate": 0.0
+  },
+  "scope_action_confusion_100": {
+    "SWITCH": {
+      "SWITCH": 140,
+      "KEEP": 5
+    },
+    "EXPAND": {
+      "KEEP": 5,
+      "SWITCH": 45
+    },
+    "KEEP": {
+      "SWITCH": 101,
+      "KEEP": 99
+    },
+    "NARROW": {
+      "KEEP": 26,
+      "SWITCH": 33,
+      "NARROW": 1
+    },
+    "BLOCK": {
+      "BLOCK": 15,
+      "SWITCH": 5
+    },
+    "ASK": {
+      "SWITCH": 20,
+      "BLOCK": 5
+    }
+  },
+  "route_confusion_100": {
+    "KNOWLEDGE": {
+      "KNOWLEDGE": 47,
+      "DOCUMENT": 5,
+      "GENERAL": 17,
+      "HYBRID": 5,
+      "CONTEXT": 1
+    },
+    "TOOL": {
+      "TOOL": 60,
+      "CONTEXT": 1,
+      "GENERAL": 6,
+      "CLARIFY": 1,
+      "KNOWLEDGE": 1,
+      "HYBRID": 1
+    },
+    "HYBRID": {
+      "HYBRID": 11,
+      "GENERAL": 3,
+      "TOOL": 1
+    },
+    "CONTEXT": {
+      "CONTEXT": 135,
+      "GENERAL": 6,
+      "TOOL": 4
+    },
+    "GENERAL": {
+      "GENERAL": 20
+    },
+    "DOCUMENT": {
+      "DOCUMENT": 30,
+      "CONTEXT": 34,
+      "KNOWLEDGE": 5,
+      "GENERAL": 8,
+      "CLARIFY": 5,
+      "HYBRID": 2,
+      "WEB": 1
+    },
+    "BLOCK": {
+      "BLOCK": 15,
+      "TOOL": 5
+    },
+    "CLARIFY": {
+      "CLARIFY": 10,
+      "WEB": 7,
+      "TOOL": 15,
+      "CONTEXT": 5,
+      "GENERAL": 8
+    },
+    "WEB": {
+      "WEB": 18,
+      "HYBRID": 5,
+      "GENERAL": 2
+    }
+  }
+}
