@@ -81,3 +81,29 @@ serving：H200-1-LargitData，2× NVIDIA H200 NVL 143GB，driver 580.65.06。
 六個欄位，多一個少一個都會拋錯，所有 adapter 都經過它建構輸入，因此洩漏在結構上被阻斷。
 
 prompt 調整只在 dev 進行（格式驗證與 adapter 設計），test 未用於調整任何 prompt、閾值或設定。
+
+## 每個系統實際收到什麼（已逐筆查證）
+
+所有系統收到**完全相同的輸入**。對 S01-T5 計算各 adapter 實際送出的 state 指紋，
+五個系統都是 `c44628aa6b37`。
+
+送出的 state 有三個頂層鍵：
+
+- `benchmark_policy` — 判定規則全文
+- `catalog` — 20 個來源的 ID 與描述
+- `case_data` — 本輪的資料，含下列六個欄位
+
+`case_data` 裡的 `history` 是**累積的完整對話**，不是只有上一輪。以 S01-T5 為例，
+history 有 11 筆，角色序列為
+`user, tool, assistant, user, tool, assistant, user, assistant, user, tool, assistant`，
+涵蓋第一到第四輪的每一個使用者訊息、每一個工具回傳與每一則助理回覆。
+
+`scope_before` 也**明白寫在輸入裡**（S01-T5 是 `{"boundary":"auto","focus_targets":["calendar_read"]}`）。
+沒有任何系統需要自己從歷史推導出當下生效的限制是什麼。
+
+這一點對結果的解讀很重要：`boundary` 這一欄的差距**不是記憶力差距**。前一個狀態是給定的，
+系統要做的是判斷它在這一輪之後變成什麼。因此「餵更多上下文」不會改善這一項。
+
+唯一的例外是 Laya，它的 `LAYA_STATE_ORDER=case_first` 只改變 state 三個鍵的**順序**
+（把 `case_data` 放到最前面），內容完全相同。這是因為它的函式庫只保留 state 的開頭，
+在預設順序下會讀不到 `case_data`。這項調整記錄在此，且只施用於 Laya。

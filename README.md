@@ -104,11 +104,20 @@ Full tables, including the benchmark's own stricter score, are in
 
 ## What the numbers say
 
-**Gemma and Jev are close on the decision and far apart on memory.** Their choice of
-where to look is within half a point of each other, and their subject-change calls within
-about one point. Almost the entire gap is the restriction state: 95% against 84%. Because
-that field carries forward, an error there poisons the rest of the conversation — which
-is why Gemma gets roughly twice as many whole conversations right.
+**Gemma and Jev are level on the decision and split on updating the state.** Their
+choice of where to look is within half a point of each other, and their subject-change
+calls within about one point. Almost the entire gap is the restriction state: 95%
+against 84%.
+
+This is not a memory problem, and it is worth being precise about why. Every system gets
+the whole conversation — by the fifth turn that is eleven entries covering every earlier
+question, every tool result and every reply — and the restriction in force is also stated
+outright in the input. Nobody has to remember it. The job is to look at a restriction you
+have been handed and decide what it becomes after this turn, and Jev is less accurate at
+that. Because the field then carries forward, an error there propagates through the rest
+of the conversation, which is why Gemma gets roughly twice as many whole conversations
+right. Since the state is given rather than recalled, feeding the model more context is
+not a fix.
 
 **Jev is the predictable one.** Its slow tail is barely slower than its typical response,
 818 ms against 749 ms. Gemma's slow tail is more than double its typical and runs past
