@@ -1,0 +1,107 @@
+{
+  "track": "teacher_forced",
+  "split": "dev",
+  "adapter": "clef_adapter:cygnet_redesigned",
+  "records": [
+    {
+      "id": "S04-T1",
+      "latency_ms": 6761.249708011746,
+      "error": null
+    },
+    {
+      "id": "S04-T2",
+      "latency_ms": 4967.802540864795,
+      "error": null
+    },
+    {
+      "id": "S04-T3",
+      "latency_ms": 5918.217707891017,
+      "error": null
+    },
+    {
+      "id": "S04-T4",
+      "latency_ms": 6189.9064590688795,
+      "error": null
+    },
+    {
+      "id": "S04-T5",
+      "latency_ms": 2196.3404580019414,
+      "error": null
+    },
+    {
+      "id": "S07-T1",
+      "latency_ms": 1415.1800000108778,
+      "error": null
+    },
+    {
+      "id": "S07-T2",
+      "latency_ms": 1085.288166999817,
+      "error": null
+    },
+    {
+      "id": "S07-T3",
+      "latency_ms": 1762.379917083308,
+      "error": null
+    },
+    {
+      "id": "S07-T4",
+      "latency_ms": 1667.8647079970688,
+      "error": null
+    },
+    {
+      "id": "S07-T5",
+      "latency_ms": 2018.7332078348845,
+      "error": null
+    },
+    {
+      "id": "S10-T1",
+      "latency_ms": 2273.280957946554,
+      "error": null
+    },
+    {
+      "id": "S10-T2",
+      "latency_ms": 2980.973167112097,
+      "error": null
+    },
+    {
+      "id": "S10-T3",
+      "latency_ms": 1525.2210840117186,
+      "error": null
+    },
+    {
+      "id": "S10-T4",
+      "latency_ms": 1773.5981249716133,
+      "error": null
+    },
+    {
+      "id": "S10-T5",
+      "latency_ms": 1912.3963750898838,
+      "error": null
+    },
+    {
+      "id": "S15-T1",
+      "latency_ms": 1348.8732499536127,
+      "error": null
+    },
+    {
+      "id": "S15-T2",
+      "latency_ms": 3294.430957874283,
+      "error": null
+    },
+    {
+      "id": "S15-T3",
+      "latency_ms": 2017.0525000430644,
+      "error": null
+    },
+    {
+      "id": "S15-T4",
+      "latency_ms": 2628.3057909458876,
+      "error": null
+    },
+    {
+      "id": "S15-T5",
+      "latency_ms": 2588.4392079897225,
+      "error": null
+    }
+  ]
+}

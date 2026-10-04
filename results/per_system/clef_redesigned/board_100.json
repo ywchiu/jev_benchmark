@@ -1,0 +1,121 @@
+{
+  "system": "Clef (Cloudflare, 27B, self-hosted)",
+  "repeats": 2,
+  "turns_per_repeat": 100,
+  "dev_turns": 20,
+  "test_turns": 80,
+  "all100_route_accuracy": 0.85,
+  "dev20_route_accuracy": 0.85,
+  "test80_route_accuracy": 0.85,
+  "all100_mode_accuracy": 0.88,
+  "dev20_mode_accuracy": 0.9,
+  "test80_mode_accuracy": 0.875,
+  "all100_scope_action_accuracy": 0.86,
+  "dev20_scope_action_accuracy": 0.85,
+  "test80_scope_action_accuracy": 0.8625,
+  "all100_boundary_accuracy": 0.84,
+  "dev20_boundary_accuracy": 0.95,
+  "test80_boundary_accuracy": 0.8125,
+  "all100_route_macro_f1": 0.8031,
+  "dev20_route_macro_f1": 0.8259,
+  "test80_route_macro_f1": 0.8097,
+  "all100_mode_macro_f1": 0.7913,
+  "dev20_mode_macro_f1": 0.8929,
+  "test80_mode_macro_f1": 0.751,
+  "all100_scope_action_macro_f1": 0.8764,
+  "dev20_scope_action_macro_f1": 0.8443,
+  "test80_scope_action_macro_f1": 0.8823,
+  "all100_boundary_macro_f1": 0.7872,
+  "dev20_boundary_macro_f1": 0.9373,
+  "test80_boundary_macro_f1": 0.7377,
+  "all100_decision_joint_accuracy": 0.54,
+  "dev20_decision_joint_accuracy": 0.65,
+  "test80_decision_joint_accuracy": 0.5125,
+  "all100_session_all_decisions_correct_rate": 0.05,
+  "dev20_session_all_decisions_correct_rate": 0.25,
+  "test80_session_all_decisions_correct_rate": 0.0,
+  "all100_mean_correct_prefix": 0.95,
+  "dev20_mean_correct_prefix": 1.75,
+  "test80_mean_correct_prefix": 0.75,
+  "latency_ms": {
+    "p50": 1544.2,
+    "p95": 2646.0,
+    "n": 200
+  },
+  "failures": {
+    "n": 0,
+    "rate": 0.0
+  },
+  "scope_action_confusion_100": {
+    "SWITCH": {
+      "SWITCH": 48,
+      "KEEP": 8,
+      "EXPAND": 2
+    },
+    "EXPAND": {
+      "KEEP": 6,
+      "EXPAND": 14
+    },
+    "KEEP": {
+      "KEEP": 76,
+      "EXPAND": 2,
+      "NARROW": 2
+    },
+    "NARROW": {
+      "NARROW": 16,
+      "KEEP": 8
+    },
+    "BLOCK": {
+      "BLOCK": 8
+    },
+    "ASK": {
+      "ASK": 10
+    }
+  },
+  "route_confusion_100": {
+    "KNOWLEDGE": {
+      "KNOWLEDGE": 24,
+      "DOCUMENT": 4,
+      "HYBRID": 2
+    },
+    "TOOL": {
+      "TOOL": 24,
+      "HYBRID": 4
+    },
+    "HYBRID": {
+      "HYBRID": 6
+    },
+    "CONTEXT": {
+      "CONTEXT": 56,
+      "CLARIFY": 2
+    },
+    "GENERAL": {
+      "GENERAL": 8
+    },
+    "DOCUMENT": {
+      "DOCUMENT": 30,
+      "KNOWLEDGE": 2,
+      "HYBRID": 2
+    },
+    "BLOCK": {
+      "BLOCK": 8
+    },
+    "CLARIFY": {
+      "DOCUMENT": 2,
+      "WEB": 6,
+      "CLARIFY": 6,
+      "TOOL": 4
+    },
+    "WEB": {
+      "WEB": 8,
+      "HYBRID": 2
+    }
+  },
+  "six_field": {
+    "targets_accuracy": 0.84,
+    "scope_state_accuracy": 0.6,
+    "joint_accuracy": 0.44,
+    "semantic_accuracy": 0.83
+  },
+  "test80_clarify_route_recall": 0.4286
+}

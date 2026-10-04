@@ -14,6 +14,8 @@ TypeSafe introduced Jev, a hosted model that works differently from a typical te
 
 Soon after Jev was released, the community started building several open-source alternatives with a similar goal. We wanted to see how these systems compare with Jev in a realistic Agent routing scenario.
 
+**Update, October 2026:** we added two more families. Cloudflare's **Clef** (27B) and **Clef-flash** (9B) are decision models that are API-compatible with Jev and have open weights. **Cygnet** is a recipe that reads typed decisions out of the stock `gemma-4-12B-it`, one token per decision, with no fine-tuning; it was No. 1 on JevBench v1.5.4. We also ran Cygnet's readout on the same Gemma 4 31B checkpoint used in the Gemma row.
+
 ## Benchmark Scenario
 
 We simulated an enterprise RAG Agent.
@@ -84,13 +86,22 @@ In the table below, **Decision Accuracy** means that all four decisions must be 
 
 ## Results
 
-| System                        | Decision Accuracy | Route     | Scope Change | Mode  | Restriction | p50        | p95        |
-| ----------------------------- | ----------------- | --------- | ------------ | ----- | ----------- | ---------- | ---------- |
-| **Gemma 4 31B** (self-hosted) | **77.0%**         | 90.0%     | 87.0%        | 92.0% | **95.0%**   | 2,293 ms   | 4,723 ms   |
-| **Jev 1.13.0** (hosted API)   | 61.4%             | **90.6%** | 85.8%        | 91.6% | 84.4%       | **749 ms** | **818 ms** |
-| djev-spark (self-hosted)      | 32.2%             | 69.2%     | 51.0%        | 80.2% | 90.4%       | 1,230 ms   | 1,470 ms   |
-| SemIf (self-hosted)           | 24.0%             | 62.0%     | 49.0%        | 65.0% | 91.0%       | 627 ms     | 1,206 ms   |
-| Laya 322M (self-hosted)       | 0.0%              | 18.0%     | 25.0%        | 10.0% | 36.0%       | **189 ms** | 312 ms     |
+| System                                    | Decision Accuracy | Route     | Scope Change | Mode      | Restriction | p50        | p95        |
+| ----------------------------------------- | ----------------- | --------- | ------------ | --------- | ----------- | ---------- | ---------- |
+| **Gemma 4 31B** (self-hosted)             | **77.0%**         | 90.0%     | **87.0%**    | **92.0%** | **95.0%**   | 2,293 ms   | 4,723 ms   |
+| Cygnet readout on Gemma 4 31B (self-hosted) ¹ | 69.0%         | 86.0%     | 80.0%        | **92.0%** | **95.0%**   | 2,196 ms   | 3,607 ms   |
+| **Jev 1.13.0** (hosted API)               | 61.4%             | **90.6%** | 85.8%        | 91.6%     | 84.4%       | 749 ms     | 818 ms     |
+| **Cygnet** (Gemma-4-12B-it, self-hosted) ¹ | 58.0%            | 79.0%     | 76.0%        | 86.0%     | 94.0%       | 265 ms     | **308 ms** |
+| **Clef** 27B (self-hosted) ²              | 54.0%             | 85.0%     | 86.0%        | 88.0%     | 84.0%       | 1,544 ms   | 2,646 ms   |
+| djev-spark (self-hosted)                  | 32.2%             | 69.2%     | 51.0%        | 80.2%     | 90.4%       | 1,230 ms   | 1,470 ms   |
+| Clef-flash 9B (self-hosted)               | 28.0%             | 82.0%     | 72.0%        | 77.0%     | 51.0%       | 1,994 ms   | 3,141 ms   |
+| SemIf (self-hosted)                       | 24.0%             | 62.0%     | 49.0%        | 65.0%     | 91.0%       | 627 ms     | 1,206 ms   |
+| Laya 322M (self-hosted)                   | 0.0%              | 18.0%     | 25.0%        | 10.0%     | 36.0%       | **189 ms** | 312 ms     |
+
+The original five systems were run 5 times. Of the rows added in October 2026, Clef-flash was run 5 times, Clef twice, and each Cygnet row once. Clef and Clef-flash gave identical answers on every repeat.
+
+¹ Run once, so run-to-run variation is not measured. The 31B row shares a production vLLM server with live traffic, so its latency is only indicative.
+² Clef's open weights, served with the model card's own `systemone()` function. Cloudflare's hosted API was also tried, but the free plan's daily quota ran out partway through the benchmark.
 
 p50 represents a typical response latency.
 
@@ -173,6 +184,38 @@ But if the tool has side effects, such as creating a ticket, sending a message, 
 
 An additional validation or permission layer is still necessary before side-effecting tools are allowed to run.
 
+The systems added later do no better. Clef matches Gemma at 43%, Clef-flash and the Cygnet readout on 31B get 29%, and Cygnet on 12B never asks first at all: it mostly goes to the web or calls a tool instead.
+
+### Clef matches Jev on scope and restriction, and loses on route
+
+Clef scores 54.0%, about seven points below Jev.
+
+On scope change (86.0% vs 85.8%) and restriction (84.0% vs 84.4%), the two are effectively tied. Clef's scope-change macro-F1 is 0.876 against Jev's 0.881, so it is just as even on the rare classes.
+
+The gap is in `route` (85.0% vs 90.6%) and `mode` (88.0% vs 91.6%). Just over half of its route misses go to a neighbouring channel: a knowledge-base question sent to a specific document, or a single tool call widened into a hybrid of two channels. Most of the rest are the ask-first cases above.
+
+Clef-flash, the 9B variant, is not usable here. Its restriction accuracy is 51%, so the source restriction it carries into the next turn is close to a coin flip.
+
+### Cygnet is the fastest system that is still useful
+
+Cygnet on the stock 12B model scores 58.0%, three points below Jev, at a p50 of 265 ms and a p95 of 308 ms. That is nearly three times faster than Jev, and the spread between typical and slow requests is just as tight.
+
+It asks each of the eleven questions in its own pass and reads a single token per question, so all eleven run in parallel.
+
+Its restriction accuracy is 94%, ten points above Jev. Its weakness is `route` (79%): when the user points at a specific document, Cygnet often decides the answer is already in the conversation, or searches the knowledge base instead.
+
+Being No. 1 on JevBench does not carry over directly. JevBench items are single-turn and average about 700 input tokens. Here each question carries about 2,500 tokens of multi-turn history and an explicit state that has to be updated.
+
+### The same 31B model, read two ways
+
+The Gemma 4 31B row generates one JSON object that answers all eleven questions. We also read the same checkpoint the Cygnet way, one token per question, each question on its own.
+
+The JSON route scores 77.0% and the Cygnet readout 69.0%. Restriction is the same (95%); the loss is mainly in scope change (87% to 80%) and route (90% to 86%).
+
+A likely reason, which we have not tested, is that in the JSON output later fields are written after earlier ones, so the scope decision can follow from the route the model has just chosen. With independent readouts, each question is answered without seeing any other answer.
+
+Model size matters a lot for this readout: the same recipe goes from 58% on 12B to 69% on 31B.
+
 ### Some models are not ready for this type of routing task
 
 Laya is extremely fast, with a p50 latency of only 189 ms.
@@ -199,4 +242,4 @@ So while both systems are fast, neither is currently suitable as the primary rou
 | [`results/charts/`](results/charts/)         | Charts used above                                                                       |
 | [`docs/method.md`](docs/method.md)           | Benchmark methodology and known failure modes                                           |
 | [`docs/gold-audit.md`](docs/gold-audit.md)   | Audit of the golden answers, completed before running any system                        |
-| [`code/`](code/)                             | Adapter and scoring code                                                                |
+| [`code/`](code/)                             | Adapter and scoring code; `adapters_clef_cygnet.py` and `clef_server.py` for the October 2026 additions |

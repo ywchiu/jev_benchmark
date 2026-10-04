@@ -1,0 +1,123 @@
+{
+  "system": "Cygnet readout on Gemma 4 31B QAT (shared vLLM 0.20.2)",
+  "repeats": 1,
+  "turns_per_repeat": 100,
+  "dev_turns": 20,
+  "test_turns": 80,
+  "all100_route_accuracy": 0.86,
+  "dev20_route_accuracy": 0.85,
+  "test80_route_accuracy": 0.8625,
+  "all100_mode_accuracy": 0.92,
+  "dev20_mode_accuracy": 0.95,
+  "test80_mode_accuracy": 0.9125,
+  "all100_scope_action_accuracy": 0.8,
+  "dev20_scope_action_accuracy": 0.8,
+  "test80_scope_action_accuracy": 0.8,
+  "all100_boundary_accuracy": 0.95,
+  "dev20_boundary_accuracy": 0.95,
+  "test80_boundary_accuracy": 0.95,
+  "all100_route_macro_f1": 0.7967,
+  "dev20_route_macro_f1": 0.8571,
+  "test80_route_macro_f1": 0.7923,
+  "all100_mode_macro_f1": 0.87,
+  "dev20_mode_macro_f1": 0.9246,
+  "test80_mode_macro_f1": 0.8539,
+  "all100_scope_action_macro_f1": 0.7479,
+  "dev20_scope_action_macro_f1": 0.761,
+  "test80_scope_action_macro_f1": 0.7316,
+  "all100_boundary_macro_f1": 0.8909,
+  "dev20_boundary_macro_f1": 0.9283,
+  "test80_boundary_macro_f1": 0.8869,
+  "all100_decision_joint_accuracy": 0.69,
+  "dev20_decision_joint_accuracy": 0.7,
+  "test80_decision_joint_accuracy": 0.6875,
+  "all100_session_all_decisions_correct_rate": 0.1,
+  "dev20_session_all_decisions_correct_rate": 0.0,
+  "test80_session_all_decisions_correct_rate": 0.125,
+  "all100_mean_correct_prefix": 1.65,
+  "dev20_mean_correct_prefix": 1.5,
+  "test80_mean_correct_prefix": 1.688,
+  "latency_ms": {
+    "p50": 2196.3,
+    "p95": 3607.4,
+    "n": 100
+  },
+  "failures": {
+    "n": 0,
+    "rate": 0.0
+  },
+  "scope_action_confusion_100": {
+    "SWITCH": {
+      "SWITCH": 26,
+      "KEEP": 2,
+      "NARROW": 1
+    },
+    "EXPAND": {
+      "KEEP": 2,
+      "EXPAND": 8
+    },
+    "KEEP": {
+      "KEEP": 34,
+      "SWITCH": 5,
+      "EXPAND": 1
+    },
+    "NARROW": {
+      "NARROW": 7,
+      "KEEP": 3,
+      "SWITCH": 1,
+      "EXPAND": 1
+    },
+    "BLOCK": {
+      "BLOCK": 3,
+      "EXPAND": 1
+    },
+    "ASK": {
+      "ASK": 2,
+      "EXPAND": 3
+    }
+  },
+  "route_confusion_100": {
+    "KNOWLEDGE": {
+      "KNOWLEDGE": 11,
+      "HYBRID": 2,
+      "DOCUMENT": 2
+    },
+    "TOOL": {
+      "TOOL": 12,
+      "HYBRID": 2
+    },
+    "HYBRID": {
+      "HYBRID": 3
+    },
+    "CONTEXT": {
+      "CONTEXT": 29
+    },
+    "GENERAL": {
+      "GENERAL": 4
+    },
+    "DOCUMENT": {
+      "DOCUMENT": 17
+    },
+    "BLOCK": {
+      "BLOCK": 3,
+      "TOOL": 1
+    },
+    "CLARIFY": {
+      "CLARIFY": 3,
+      "WEB": 3,
+      "TOOL": 2,
+      "CONTEXT": 1
+    },
+    "WEB": {
+      "WEB": 4,
+      "HYBRID": 1
+    }
+  },
+  "six_field": {
+    "targets_accuracy": 0.88,
+    "scope_state_accuracy": 0.65,
+    "joint_accuracy": 0.54,
+    "semantic_accuracy": 0.92
+  },
+  "test80_clarify_route_recall": 0.2857
+}

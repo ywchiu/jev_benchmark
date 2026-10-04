@@ -1,0 +1,128 @@
+{
+  "system": "Clef-flash (Cloudflare, 9B, self-hosted)",
+  "repeats": 5,
+  "turns_per_repeat": 100,
+  "dev_turns": 20,
+  "test_turns": 80,
+  "all100_route_accuracy": 0.82,
+  "dev20_route_accuracy": 0.75,
+  "test80_route_accuracy": 0.8375,
+  "all100_mode_accuracy": 0.77,
+  "dev20_mode_accuracy": 0.85,
+  "test80_mode_accuracy": 0.75,
+  "all100_scope_action_accuracy": 0.72,
+  "dev20_scope_action_accuracy": 0.7,
+  "test80_scope_action_accuracy": 0.725,
+  "all100_boundary_accuracy": 0.51,
+  "dev20_boundary_accuracy": 0.45,
+  "test80_boundary_accuracy": 0.525,
+  "all100_route_macro_f1": 0.7598,
+  "dev20_route_macro_f1": 0.5759,
+  "test80_route_macro_f1": 0.794,
+  "all100_mode_macro_f1": 0.7619,
+  "dev20_mode_macro_f1": 0.8453,
+  "test80_mode_macro_f1": 0.7416,
+  "all100_scope_action_macro_f1": 0.6658,
+  "dev20_scope_action_macro_f1": 0.5873,
+  "test80_scope_action_macro_f1": 0.692,
+  "all100_boundary_macro_f1": 0.4448,
+  "dev20_boundary_macro_f1": 0.5048,
+  "test80_boundary_macro_f1": 0.4513,
+  "all100_decision_joint_accuracy": 0.28,
+  "dev20_decision_joint_accuracy": 0.25,
+  "test80_decision_joint_accuracy": 0.2875,
+  "all100_session_all_decisions_correct_rate": 0.0,
+  "dev20_session_all_decisions_correct_rate": 0.0,
+  "test80_session_all_decisions_correct_rate": 0.0,
+  "all100_mean_correct_prefix": 0.5,
+  "dev20_mean_correct_prefix": 0.5,
+  "test80_mean_correct_prefix": 0.5,
+  "latency_ms": {
+    "p50": 1993.7,
+    "p95": 3141.3,
+    "n": 500
+  },
+  "failures": {
+    "n": 0,
+    "rate": 0.0
+  },
+  "scope_action_confusion_100": {
+    "SWITCH": {
+      "SWITCH": 100,
+      "KEEP": 20,
+      "NARROW": 5,
+      "EXPAND": 20
+    },
+    "EXPAND": {
+      "KEEP": 15,
+      "EXPAND": 35
+    },
+    "KEEP": {
+      "KEEP": 165,
+      "NARROW": 10,
+      "ASK": 5,
+      "SWITCH": 15,
+      "EXPAND": 5
+    },
+    "NARROW": {
+      "NARROW": 35,
+      "KEEP": 20,
+      "SWITCH": 5
+    },
+    "BLOCK": {
+      "BLOCK": 20
+    },
+    "ASK": {
+      "EXPAND": 15,
+      "ASK": 5,
+      "NARROW": 5
+    }
+  },
+  "route_confusion_100": {
+    "KNOWLEDGE": {
+      "KNOWLEDGE": 60,
+      "DOCUMENT": 10,
+      "HYBRID": 5
+    },
+    "TOOL": {
+      "HYBRID": 15,
+      "TOOL": 45,
+      "CLARIFY": 10
+    },
+    "HYBRID": {
+      "CLARIFY": 5,
+      "HYBRID": 10
+    },
+    "CONTEXT": {
+      "CONTEXT": 145
+    },
+    "GENERAL": {
+      "GENERAL": 20
+    },
+    "DOCUMENT": {
+      "DOCUMENT": 80,
+      "CONTEXT": 5
+    },
+    "BLOCK": {
+      "BLOCK": 20
+    },
+    "CLARIFY": {
+      "DOCUMENT": 10,
+      "WEB": 10,
+      "KNOWLEDGE": 5,
+      "CLARIFY": 10,
+      "TOOL": 10
+    },
+    "WEB": {
+      "WEB": 20,
+      "HYBRID": 5
+    }
+  },
+  "six_field": {
+    "targets_accuracy": 0.81,
+    "scope_state_accuracy": 0.31,
+    "joint_accuracy": 0.18,
+    "semantic_accuracy": 0.67
+  },
+  "test80_clarify_route_recall": 0.2857
+}

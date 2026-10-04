@@ -1,0 +1,124 @@
+{
+  "system": "Cygnet (Gemma-4-12B-it, vLLM 0.30.0)",
+  "repeats": 1,
+  "turns_per_repeat": 100,
+  "dev_turns": 20,
+  "test_turns": 80,
+  "all100_route_accuracy": 0.79,
+  "dev20_route_accuracy": 0.75,
+  "test80_route_accuracy": 0.8,
+  "all100_mode_accuracy": 0.86,
+  "dev20_mode_accuracy": 0.9,
+  "test80_mode_accuracy": 0.85,
+  "all100_scope_action_accuracy": 0.76,
+  "dev20_scope_action_accuracy": 0.8,
+  "test80_scope_action_accuracy": 0.75,
+  "all100_boundary_accuracy": 0.94,
+  "dev20_boundary_accuracy": 1.0,
+  "test80_boundary_accuracy": 0.925,
+  "all100_route_macro_f1": 0.6972,
+  "dev20_route_macro_f1": 0.7042,
+  "test80_route_macro_f1": 0.712,
+  "all100_mode_macro_f1": 0.8169,
+  "dev20_mode_macro_f1": 0.9318,
+  "test80_mode_macro_f1": 0.7792,
+  "all100_scope_action_macro_f1": 0.694,
+  "dev20_scope_action_macro_f1": 0.7848,
+  "test80_scope_action_macro_f1": 0.6246,
+  "all100_boundary_macro_f1": 0.8537,
+  "dev20_boundary_macro_f1": 1.0,
+  "test80_boundary_macro_f1": 0.8121,
+  "all100_decision_joint_accuracy": 0.58,
+  "dev20_decision_joint_accuracy": 0.6,
+  "test80_decision_joint_accuracy": 0.575,
+  "all100_session_all_decisions_correct_rate": 0.1,
+  "dev20_session_all_decisions_correct_rate": 0.25,
+  "test80_session_all_decisions_correct_rate": 0.0625,
+  "all100_mean_correct_prefix": 1.45,
+  "dev20_mean_correct_prefix": 2,
+  "test80_mean_correct_prefix": 1.312,
+  "latency_ms": {
+    "p50": 265.4,
+    "p95": 307.7,
+    "n": 100
+  },
+  "failures": {
+    "n": 0,
+    "rate": 0.0
+  },
+  "scope_action_confusion_100": {
+    "SWITCH": {
+      "SWITCH": 26,
+      "KEEP": 3
+    },
+    "EXPAND": {
+      "EXPAND": 7,
+      "SWITCH": 1,
+      "KEEP": 2
+    },
+    "KEEP": {
+      "EXPAND": 2,
+      "KEEP": 30,
+      "SWITCH": 8
+    },
+    "NARROW": {
+      "NARROW": 9,
+      "KEEP": 3
+    },
+    "BLOCK": {
+      "BLOCK": 3,
+      "SWITCH": 1
+    },
+    "ASK": {
+      "ASK": 1,
+      "EXPAND": 2,
+      "BLOCK": 1,
+      "SWITCH": 1
+    }
+  },
+  "route_confusion_100": {
+    "KNOWLEDGE": {
+      "KNOWLEDGE": 14,
+      "HYBRID": 1
+    },
+    "TOOL": {
+      "TOOL": 14
+    },
+    "HYBRID": {
+      "HYBRID": 3
+    },
+    "CONTEXT": {
+      "CONTEXT": 29
+    },
+    "GENERAL": {
+      "GENERAL": 3,
+      "CONTEXT": 1
+    },
+    "DOCUMENT": {
+      "CONTEXT": 5,
+      "DOCUMENT": 9,
+      "KNOWLEDGE": 3
+    },
+    "BLOCK": {
+      "BLOCK": 3,
+      "TOOL": 1
+    },
+    "CLARIFY": {
+      "BLOCK": 2,
+      "WEB": 3,
+      "TOOL": 3,
+      "CONTEXT": 1
+    },
+    "WEB": {
+      "WEB": 4,
+      "HYBRID": 1
+    }
+  },
+  "six_field": {
+    "targets_accuracy": 0.79,
+    "scope_state_accuracy": 0.59,
+    "joint_accuracy": 0.38,
+    "semantic_accuracy": 0.88
+  },
+  "test80_clarify_route_recall": 0.0
+}
