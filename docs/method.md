@@ -58,6 +58,11 @@
 | SemIf | 自建 | Qwen3.5-4B 凍結權重 + 選項 logit 讀取，MIT |
 | djev → DiffusionGemma | 自建 | djev API 為 invite-only，改自建其底層 `google/diffusiongemma-26B-A4B-it`（Apache-2.0） |
 | Laya | 自建 | `convaiinnovations/laya` 421M，Apache-2.0，in-process |
+| Clef / Clef-flash（2026-10 新增） | 自建 | `Cloudflare/clef`（Qwen3.8-27B 骨幹）、`Cloudflare/clef-flash`（Qwen3.5-9B 骨幹），Apache-2.0，bf16；`code/clef_server.py` 直接呼叫模型說明頁的 `systemone()`，transformers 5.10.2、torch 2.11 |
+| Cygnet（2026-10 新增） | 自建 | `google/gemma-4-12B-it` @ `707f0a3`，bf16；vLLM 0.30.0（`--max-model-len 16384 --gpu-memory-utilization 0.50`）+ cygnet-recipe 原版 `shim/decision_server.py`，T = 3.4 |
+| Cygnet 讀法 + Gemma 4 31B（2026-10 新增） | 自建 | 與 Gemma 列相同的 QAT W4A16 模型，接在既有的 vLLM 0.20.2 線上服務前，`CYGNET_MAX_PARALLEL=2`，與線上流量共用 |
+
+2026-10 新增的四個系統重複次數不同：Clef-flash 5 次、Clef 2 次、兩列 Cygnet 各 1 次，詳見 `results/summary.md`。
 
 client：macOS（Darwin 24.6.0），經 SSH tunnel 連 H200 的本地服務。
 serving：H200-1-LargitData，2× NVIDIA H200 NVL 143GB，driver 580.65.06。
